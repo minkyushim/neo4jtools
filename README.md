@@ -4,24 +4,17 @@
 
 ## Install
 
-`pip install -e .`
+`pip install git+ssh://git@github.com/minkyushim/neo4jtools.git`
 
 ## How to use
 
-Fill me in please! Don't forget code examples:
-
 ```python
-SimpleNeo4jHTTPAPIClient()
+SimpleNeo4jHTTPAPIClient(url='http://localhost:7474')
 ```
 
 
-    ---------------------------------------------------------------------------
 
-    TypeError                                 Traceback (most recent call last)
 
-    /tmp/ipykernel_18648/4003372018.py in <module>
-    ----> 1 SimpleNeo4jHTTPAPIClient()
-    
+    {"classname": "SimpleNeo4jHTTPAPIClient", "url": "http://localhost:7474", "neo4j_version": "4.4.3", "neo4j_edition": "community", "db": "neo4j", "auth": false}
 
-    TypeError: __init__() missing 1 required positional argument: 'url'
 

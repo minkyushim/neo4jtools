@@ -37,7 +37,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install -e .</code></p>
+<p><code>pip install git+ssh://git@github.com/minkyushim/neo4jtools.git</code></p>
 
 </div>
 </div>
@@ -48,13 +48,6 @@ nb_path: "index.ipynb"
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Fill me in please! Don't forget code examples:</p>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -62,7 +55,7 @@ nb_path: "index.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">SimpleNeo4jHTTPAPIClient</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">SimpleNeo4jHTTPAPIClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://localhost:7474&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -74,15 +67,12 @@ nb_path: "index.ipynb"
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_18648/4003372018.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>SimpleNeo4jHTTPAPIClient<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">TypeError</span>: __init__() missing 1 required positional argument: &#39;url&#39;</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#34;classname&#34;: &#34;SimpleNeo4jHTTPAPIClient&#34;, &#34;url&#34;: &#34;http://localhost:7474&#34;, &#34;neo4j_version&#34;: &#34;4.4.3&#34;, &#34;neo4j_edition&#34;: &#34;community&#34;, &#34;db&#34;: &#34;neo4j&#34;, &#34;auth&#34;: false}</pre>
 </div>
+
 </div>
 
 </div>

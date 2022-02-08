@@ -1,7 +1,6 @@
 {
   "neo4jtools": {
     "Overview": "/",
-    "Simple Neo4j HTTP API Client": "core.html",
-    "Title": "Untitled.html"
+    "Simple Neo4j HTTP API Client": "core.html"
   }
 }
