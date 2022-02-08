@@ -13,6 +13,8 @@ jobs:
       with:
         image: neo4j:latest
         options: -v ${{ github.workspace }}/neo4j/data:/data --publish=7474:7474 --publish=7687:7687
+        shell: bash
+        run: neo4j
     - name: Sleep for 10 seconds
       uses: jakejarvis/wait-action@master
       with:
