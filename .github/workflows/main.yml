@@ -13,6 +13,10 @@ jobs:
       with:
         image: neo4j:latest
         options: -v ${{ github.workspace }}/neo4j/data:/data --publish=7474:7474 --publish=7687:7687
+    - name: Sleep for 10 seconds
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '10s'
     - name: Install the library
       run: |
         pip install nbdev jupyter
