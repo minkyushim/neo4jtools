@@ -6,8 +6,8 @@ index = {"SimpleNeo4jHTTPAPIClient": "00_core.ipynb"}
 
 modules = ["core.py"]
 
-doc_url = "https://{user}.github.io/SimpleNeo4jHTTPClient/"
+doc_url = "https://me.github.io/neo4jtools/"
 
-git_url = "https://github.com/{user}/SimpleNeo4jHTTPClient/tree/{branch}/"
+git_url = "https://github.com/me/neo4jtools/tree/{branch}/"
 
 def custom_doc_links(name): return None
