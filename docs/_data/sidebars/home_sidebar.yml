@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: Simple Neo4j HTTP API Client
       url: core.html
+    - output: web,pdf
+      title: DWPC
+      url: dwpc.html
     output: web
     title: neo4jtools
   output: web

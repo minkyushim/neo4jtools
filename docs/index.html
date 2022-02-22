@@ -37,7 +37,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install git+ssh://git@github.com/minkyushim/neo4jtools.git</code></p>
+<p><code>pip install git+git://github.com/minkyushim/neo4jtools.git</code></p>
 
 </div>
 </div>
@@ -55,7 +55,8 @@ nb_path: "index.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">SimpleNeo4jHTTPAPIClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://localhost:7474&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span><span class="o">=</span><span class="n">SimpleNeo4jHTTPAPIClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://localhost:7474&#39;</span><span class="p">,</span> <span class="n">userid</span><span class="o">=</span><span class="s1">&#39;neo4j&#39;</span><span class="p">,</span> <span class="n">passwd</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="n">client</span>
 </pre></div>
 
     </div>
@@ -70,7 +71,44 @@ nb_path: "index.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#34;classname&#34;: &#34;SimpleNeo4jHTTPAPIClient&#34;, &#34;url&#34;: &#34;http://localhost:7474&#34;, &#34;neo4j_version&#34;: &#34;4.4.3&#34;, &#34;neo4j_edition&#34;: &#34;community&#34;, &#34;db&#34;: &#34;neo4j&#34;, &#34;auth&#34;: false}</pre>
+<pre>{&#34;classname&#34;: &#34;SimpleNeo4jHTTPAPIClient&#34;, &#34;url&#34;: &#34;http://localhost:7474&#34;, &#34;neo4j_version&#34;: &#34;4.4.3&#34;, &#34;neo4j_edition&#34;: &#34;community&#34;, &#34;db&#34;: &#34;neo4j&#34;, &#34;auth&#34;: true}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;results&#39;: [{&#39;columns&#39;: [&#39;count(n)&#39;],
+   &#39;data&#39;: [{&#39;row&#39;: [85041],
+     &#39;meta&#39;: [None],
+     &#39;graph&#39;: {&#39;nodes&#39;: [], &#39;relationships&#39;: []}}]}],
+ &#39;errors&#39;: []}</pre>
 </div>
 
 </div>

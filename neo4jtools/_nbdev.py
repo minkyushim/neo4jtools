@@ -2,9 +2,12 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"SimpleNeo4jHTTPAPIClient": "00_core.ipynb"}
+index = {"SimpleNeo4jHTTPAPIClient": "00_core.ipynb",
+         "make_dwpc_query": "01_dwpc.ipynb",
+         "patterns_to_query": "01_dwpc.ipynb"}
 
-modules = ["core.py"]
+modules = ["core.py",
+           "dwpc.py"]
 
 doc_url = "https://me.github.io/neo4jtools/"
 

@@ -1,6 +1,7 @@
 {
   "neo4jtools": {
     "Overview": "/",
-    "Simple Neo4j HTTP API Client": "core.html"
+    "Simple Neo4j HTTP API Client": "core.html",
+    "DWPC": "dwpc.html"
   }
 }
