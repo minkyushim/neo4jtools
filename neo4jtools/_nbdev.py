@@ -4,7 +4,10 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"SimpleNeo4jHTTPAPIClient": "00_core.ipynb",
          "make_dwpc_query": "01_dwpc.ipynb",
-         "patterns_to_query": "01_dwpc.ipynb"}
+         "patterns_to_query": "01_dwpc.ipynb",
+         "parse_result_row_graph": "02_utils.ipynb",
+         "drop_duplicates": "02_utils.ipynb",
+         "parse_result_graph": "02_utils.ipynb"}
 
 modules = ["core.py",
            "dwpc.py"]
