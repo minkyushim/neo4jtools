@@ -40,7 +40,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SimpleNeo4jHTTPAPIClient" class="doc_header"><code>class</code> <code>SimpleNeo4jHTTPAPIClient</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/core.py#L8" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SimpleNeo4jHTTPAPIClient</code>(<strong><code>url</code></strong>, <strong><code>db</code></strong>=<em><code>'neo4j'</code></em>, <strong><code>userid</code></strong>=<em><code>None</code></em>, <strong><code>passwd</code></strong>=<em><code>None</code></em>)</p>
+<h2 id="SimpleNeo4jHTTPAPIClient" class="doc_header"><code>class</code> <code>SimpleNeo4jHTTPAPIClient</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/core.py#L11" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SimpleNeo4jHTTPAPIClient</code>(<strong><code>url</code></strong>, <strong><code>db</code></strong>=<em><code>'neo4j'</code></em>, <strong><code>userid</code></strong>=<em><code>None</code></em>, <strong><code>passwd</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -60,143 +60,9 @@ nb_path: "00_core.ipynb"
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_output</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">{</span>
-<span class="s2">  &quot;row&quot;: [</span>
-<span class="s2">    [</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;identifier&quot;: &quot;10013&quot;,</span>
-<span class="s2">        &quot;license&quot;: &quot;CCO 1.0&quot;,</span>
-<span class="s2">        &quot;chromosome&quot;: &quot;X&quot;,</span>
-<span class="s2">        &quot;name&quot;: &quot;HDAC6&quot;,</span>
-<span class="s2">        &quot;description&quot;: &quot;histone deacetylase 6&quot;,</span>
-<span class="s2">        &quot;source&quot;: &quot;Entrez Gene:210321&quot;,</span>
-<span class="s2">        &quot;url&quot;: &quot;http://identifiers.org/ncbigene/10013&quot;</span>
-<span class="s2">      },</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;action_score&quot;: 943,</span>
-<span class="s2">        &quot;homology&quot;: 0,</span>
-<span class="s2">        &quot;experiments&quot;: 483,</span>
-<span class="s2">        &quot;textmining_transferred&quot;: 642,</span>
-<span class="s2">        &quot;combined_score&quot;: 923,</span>
-<span class="s2">        &quot;source&quot;: &quot;String&quot;,</span>
-<span class="s2">        &quot;version&quot;: &quot;v11.5&quot;,</span>
-<span class="s2">        &quot;license&quot;: &quot;CC BY 4.0&quot;,</span>
-<span class="s2">        &quot;experiments_transferred&quot;: 86,</span>
-<span class="s2">        &quot;database&quot;: 600,</span>
-<span class="s2">        &quot;unbiased&quot;: &quot;False&quot;,</span>
-<span class="s2">        &quot;action&quot;: &quot;catalysis;reaction&quot;,</span>
-<span class="s2">        &quot;database_transferred&quot;: 0,</span>
-<span class="s2">        &quot;textmining&quot;: 0</span>
-<span class="s2">      },</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;identifier&quot;: &quot;3326&quot;,</span>
-<span class="s2">        &quot;license&quot;: &quot;CCO 1.0&quot;,</span>
-<span class="s2">        &quot;chromosome&quot;: &quot;6&quot;,</span>
-<span class="s2">        &quot;name&quot;: &quot;HSP90AB1&quot;,</span>
-<span class="s2">        &quot;description&quot;: &quot;heat shock protein 90 alpha family class B member 1&quot;,</span>
-<span class="s2">        &quot;source&quot;: &quot;Entrez Gene:210321&quot;,</span>
-<span class="s2">        &quot;url&quot;: &quot;http://identifiers.org/ncbigene/3326&quot;</span>
-<span class="s2">      }</span>
-<span class="s2">    ]</span>
-<span class="s2">  ],</span>
-<span class="s2">  &quot;meta&quot;: [</span>
-<span class="s2">    [</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;id&quot;: 6967,</span>
-<span class="s2">        &quot;type&quot;: &quot;node&quot;,</span>
-<span class="s2">        &quot;deleted&quot;: false</span>
-<span class="s2">      },</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;id&quot;: 7460908,</span>
-<span class="s2">        &quot;type&quot;: &quot;relationship&quot;,</span>
-<span class="s2">        &quot;deleted&quot;: false</span>
-<span class="s2">      },</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;id&quot;: 73199,</span>
-<span class="s2">        &quot;type&quot;: &quot;node&quot;,</span>
-<span class="s2">        &quot;deleted&quot;: false</span>
-<span class="s2">      }</span>
-<span class="s2">    ]</span>
-<span class="s2">  ],</span>
-<span class="s2">  &quot;graph&quot;: {</span>
-<span class="s2">    &quot;nodes&quot;: [</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;id&quot;: &quot;6967&quot;,</span>
-<span class="s2">        &quot;labels&quot;: [</span>
-<span class="s2">          &quot;Gene&quot;</span>
-<span class="s2">        ],</span>
-<span class="s2">        &quot;properties&quot;: {</span>
-<span class="s2">          &quot;identifier&quot;: &quot;10013&quot;,</span>
-<span class="s2">          &quot;license&quot;: &quot;CCO 1.0&quot;,</span>
-<span class="s2">          &quot;chromosome&quot;: &quot;X&quot;,</span>
-<span class="s2">          &quot;name&quot;: &quot;HDAC6&quot;,</span>
-<span class="s2">          &quot;description&quot;: &quot;histone deacetylase 6&quot;,</span>
-<span class="s2">          &quot;source&quot;: &quot;Entrez Gene:210321&quot;,</span>
-<span class="s2">          &quot;url&quot;: &quot;http://identifiers.org/ncbigene/10013&quot;</span>
-<span class="s2">        }</span>
-<span class="s2">      },</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;id&quot;: &quot;73199&quot;,</span>
-<span class="s2">        &quot;labels&quot;: [</span>
-<span class="s2">          &quot;Gene&quot;</span>
-<span class="s2">        ],</span>
-<span class="s2">        &quot;properties&quot;: {</span>
-<span class="s2">          &quot;identifier&quot;: &quot;3326&quot;,</span>
-<span class="s2">          &quot;license&quot;: &quot;CCO 1.0&quot;,</span>
-<span class="s2">          &quot;chromosome&quot;: &quot;6&quot;,</span>
-<span class="s2">          &quot;name&quot;: &quot;HSP90AB1&quot;,</span>
-<span class="s2">          &quot;description&quot;: &quot;heat shock protein 90 alpha family class B member 1&quot;,</span>
-<span class="s2">          &quot;source&quot;: &quot;Entrez Gene:210321&quot;,</span>
-<span class="s2">          &quot;url&quot;: &quot;http://identifiers.org/ncbigene/3326&quot;</span>
-<span class="s2">        }</span>
-<span class="s2">      }</span>
-<span class="s2">    ],</span>
-<span class="s2">    &quot;relationships&quot;: [</span>
-<span class="s2">      {</span>
-<span class="s2">        &quot;id&quot;: &quot;7460908&quot;,</span>
-<span class="s2">        &quot;type&quot;: &quot;INTERACTS_GiG2&quot;,</span>
-<span class="s2">        &quot;startNode&quot;: &quot;73199&quot;,</span>
-<span class="s2">        &quot;endNode&quot;: &quot;6967&quot;,</span>
-<span class="s2">        &quot;properties&quot;: {</span>
-<span class="s2">          &quot;action_score&quot;: 943,</span>
-<span class="s2">          &quot;homology&quot;: 0,</span>
-<span class="s2">          &quot;experiments&quot;: 483,</span>
-<span class="s2">          &quot;textmining_transferred&quot;: 642,</span>
-<span class="s2">          &quot;combined_score&quot;: 923,</span>
-<span class="s2">          &quot;source&quot;: &quot;String&quot;,</span>
-<span class="s2">          &quot;version&quot;: &quot;v11.5&quot;,</span>
-<span class="s2">          &quot;license&quot;: &quot;CC BY 4.0&quot;,</span>
-<span class="s2">          &quot;experiments_transferred&quot;: 86,</span>
-<span class="s2">          &quot;database&quot;: 600,</span>
-<span class="s2">          &quot;unbiased&quot;: &quot;False&quot;,</span>
-<span class="s2">          &quot;action&quot;: &quot;catalysis;reaction&quot;,</span>
-<span class="s2">          &quot;database_transferred&quot;: 0,</span>
-<span class="s2">          &quot;textmining&quot;: 0</span>
-<span class="s2">        }</span>
-<span class="s2">      }</span>
-<span class="s2">    ]</span>
-<span class="s2">  }</span>
-<span class="s2">}&quot;&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tests">Tests<a class="anchor-link" href="#Tests"> </a></h2>
+<h2 id="Simple-example">Simple example<a class="anchor-link" href="#Simple-example"> </a></h2>
 </div>
 </div>
 </div>
@@ -241,42 +107,10 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">)</span>
-<span class="n">result</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;errors&#39;: [{&#39;code&#39;: &#39;Neo.ClientError.Security.Unauthorized&#39;,
-   &#39;message&#39;: &#39;No authentication header supplied.&#39;}]}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">])</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="n">e</span>
 </pre></div>
 
     </div>
@@ -327,7 +161,7 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
 <span class="n">result</span>
 </pre></div>
 
@@ -343,11 +177,121 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;results&#39;: [{&#39;columns&#39;: [&#39;count(n)&#39;],
-   &#39;data&#39;: [{&#39;row&#39;: [85041],
-     &#39;meta&#39;: [None],
-     &#39;graph&#39;: {&#39;nodes&#39;: [], &#39;relationships&#39;: []}}]}],
- &#39;errors&#39;: []}</pre>
+<pre>{&#39;columns&#39;: [&#39;count(n)&#39;], &#39;data&#39;: [{&#39;row&#39;: [85852], &#39;meta&#39;: [None]}]}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Example-output_format='graph'">Example output_format='graph'<a class="anchor-link" href="#Example-output_format='graph'"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match p=()--() return p limit 3;&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;graph&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;nodes&#39;: [{&#39;identifier&#39;: &#39;4358&#39;,
+   &#39;license&#39;: &#39;CCO 1.0&#39;,
+   &#39;chromosome&#39;: &#39;2&#39;,
+   &#39;name&#39;: &#39;MPV17&#39;,
+   &#39;description&#39;: &#39;mitochondrial inner membrane protein MPV17&#39;,
+   &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
+   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/4358&#39;,
+   &#39;label&#39;: &#39;Gene&#39;},
+  {&#39;identifier&#39;: &#39;GO:0000002&#39;,
+   &#39;license&#39;: &#39;CC BY 4.0&#39;,
+   &#39;chromosome&#39;: nan,
+   &#39;name&#39;: &#39;mitochondrial genome maintenance&#39;,
+   &#39;description&#39;: nan,
+   &#39;source&#39;: &#39;Gene Ontology:2021-02-01&#39;,
+   &#39;url&#39;: &#39;http://purl.obolibrary.org/obo/GO:0000002&#39;,
+   &#39;label&#39;: &#39;BiologicalProcess&#39;},
+  {&#39;identifier&#39;: &#39;291&#39;,
+   &#39;license&#39;: &#39;CCO 1.0&#39;,
+   &#39;chromosome&#39;: &#39;4&#39;,
+   &#39;name&#39;: &#39;SLC25A4&#39;,
+   &#39;description&#39;: &#39;solute carrier family 25 member 4&#39;,
+   &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
+   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/291&#39;,
+   &#39;label&#39;: &#39;Gene&#39;},
+  {&#39;identifier&#39;: &#39;55186&#39;,
+   &#39;license&#39;: &#39;CCO 1.0&#39;,
+   &#39;chromosome&#39;: &#39;3&#39;,
+   &#39;name&#39;: &#39;SLC25A36&#39;,
+   &#39;description&#39;: &#39;solute carrier family 25 member 36&#39;,
+   &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
+   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/55186&#39;,
+   &#39;label&#39;: &#39;Gene&#39;}],
+ &#39;edges&#39;: [{&#39;type&#39;: &#39;PARTICIPATES_GpBP&#39;,
+   &#39;start_identifier&#39;: &#39;4358&#39;,
+   &#39;start_name&#39;: &#39;MPV17&#39;,
+   &#39;end_identifier&#39;: &#39;GO:0000002&#39;,
+   &#39;end_name&#39;: &#39;mitochondrial genome maintenance&#39;,
+   &#39;license&#39;: &#39;CC By 4.0&#39;,
+   &#39;unbiased&#39;: &#39;False&#39;,
+   &#39;source&#39;: &#39;NCBI gene2go&#39;,
+   &#39;version&#39;: &#39;2021-02-01&#39;},
+  {&#39;type&#39;: &#39;PARTICIPATES_GpBP&#39;,
+   &#39;start_identifier&#39;: &#39;291&#39;,
+   &#39;start_name&#39;: &#39;SLC25A4&#39;,
+   &#39;end_identifier&#39;: &#39;GO:0000002&#39;,
+   &#39;end_name&#39;: &#39;mitochondrial genome maintenance&#39;,
+   &#39;license&#39;: &#39;CC By 4.0&#39;,
+   &#39;unbiased&#39;: &#39;False&#39;,
+   &#39;source&#39;: &#39;NCBI gene2go&#39;,
+   &#39;version&#39;: &#39;2021-02-01&#39;},
+  {&#39;type&#39;: &#39;PARTICIPATES_GpBP&#39;,
+   &#39;start_identifier&#39;: &#39;55186&#39;,
+   &#39;start_name&#39;: &#39;SLC25A36&#39;,
+   &#39;end_identifier&#39;: &#39;GO:0000002&#39;,
+   &#39;end_name&#39;: &#39;mitochondrial genome maintenance&#39;,
+   &#39;license&#39;: &#39;CC By 4.0&#39;,
+   &#39;unbiased&#39;: &#39;False&#39;,
+   &#39;source&#39;: &#39;NCBI gene2go&#39;,
+   &#39;version&#39;: &#39;2021-02-01&#39;}]}</pre>
 </div>
 
 </div>
@@ -365,10 +309,200 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>identifier</th>
+      <th>license</th>
+      <th>chromosome</th>
+      <th>name</th>
+      <th>description</th>
+      <th>source</th>
+      <th>url</th>
+      <th>label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4358</td>
+      <td>CCO 1.0</td>
+      <td>2</td>
+      <td>MPV17</td>
+      <td>mitochondrial inner membrane protein MPV17</td>
+      <td>Entrez Gene:210321</td>
+      <td>http://identifiers.org/ncbigene/4358</td>
+      <td>Gene</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>GO:0000002</td>
+      <td>CC BY 4.0</td>
+      <td>NaN</td>
+      <td>mitochondrial genome maintenance</td>
+      <td>NaN</td>
+      <td>Gene Ontology:2021-02-01</td>
+      <td>http://purl.obolibrary.org/obo/GO:0000002</td>
+      <td>BiologicalProcess</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>291</td>
+      <td>CCO 1.0</td>
+      <td>4</td>
+      <td>SLC25A4</td>
+      <td>solute carrier family 25 member 4</td>
+      <td>Entrez Gene:210321</td>
+      <td>http://identifiers.org/ncbigene/291</td>
+      <td>Gene</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>55186</td>
+      <td>CCO 1.0</td>
+      <td>3</td>
+      <td>SLC25A36</td>
+      <td>solute carrier family 25 member 36</td>
+      <td>Entrez Gene:210321</td>
+      <td>http://identifiers.org/ncbigene/55186</td>
+      <td>Gene</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;edges&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>start_identifier</th>
+      <th>start_name</th>
+      <th>end_identifier</th>
+      <th>end_name</th>
+      <th>license</th>
+      <th>unbiased</th>
+      <th>source</th>
+      <th>version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PARTICIPATES_GpBP</td>
+      <td>4358</td>
+      <td>MPV17</td>
+      <td>GO:0000002</td>
+      <td>mitochondrial genome maintenance</td>
+      <td>CC By 4.0</td>
+      <td>False</td>
+      <td>NCBI gene2go</td>
+      <td>2021-02-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>PARTICIPATES_GpBP</td>
+      <td>291</td>
+      <td>SLC25A4</td>
+      <td>GO:0000002</td>
+      <td>mitochondrial genome maintenance</td>
+      <td>CC By 4.0</td>
+      <td>False</td>
+      <td>NCBI gene2go</td>
+      <td>2021-02-01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PARTICIPATES_GpBP</td>
+      <td>55186</td>
+      <td>SLC25A36</td>
+      <td>GO:0000002</td>
+      <td>mitochondrial genome maintenance</td>
+      <td>CC By 4.0</td>
+      <td>False</td>
+      <td>NCBI gene2go</td>
+      <td>2021-02-01</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 

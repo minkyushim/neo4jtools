@@ -10,7 +10,8 @@ index = {"SimpleNeo4jHTTPAPIClient": "00_core.ipynb",
          "parse_result_graph": "02_utils.ipynb"}
 
 modules = ["core.py",
-           "dwpc.py"]
+           "dwpc.py",
+           "utils.py"]
 
 doc_url = "https://me.github.io/neo4jtools/"
 

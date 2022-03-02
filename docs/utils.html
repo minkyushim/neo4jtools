@@ -38,6 +38,7 @@ nb_path: "02_utils.ipynb"
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 </pre></div>
 
     </div>
@@ -58,7 +59,7 @@ nb_path: "02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="parse_result_row_graph" class="doc_header"><code>parse_result_row_graph</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/core.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parse_result_row_graph</code>(<strong><code>jsonobj</code></strong>)</p>
+<h4 id="parse_result_row_graph" class="doc_header"><code>parse_result_row_graph</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/utils.py#L8" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parse_result_row_graph</code>(<strong><code>jsonobj</code></strong>)</p>
 </blockquote>
 <p>Parse Neo4j HTTP API Graph Result row</p>
 <p>input: element of result list
@@ -85,7 +86,7 @@ output: tuple of nodes and edges</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="drop_duplicates" class="doc_header"><code>drop_duplicates</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/core.py#L125" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>drop_duplicates</code>(<strong><code>items</code></strong>)</p>
+<h4 id="drop_duplicates" class="doc_header"><code>drop_duplicates</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/utils.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>drop_duplicates</code>(<strong><code>items</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -109,7 +110,7 @@ output: tuple of nodes and edges</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="parse_result_graph" class="doc_header"><code>parse_result_graph</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/core.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parse_result_graph</code>(<strong><code>data</code></strong>)</p>
+<h4 id="parse_result_graph" class="doc_header"><code>parse_result_graph</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/utils.py#L75" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parse_result_graph</code>(<strong><code>data</code></strong>)</p>
 </blockquote>
 <p>Parse Neo4j HTTP API Graph Result</p>
 
@@ -197,21 +198,21 @@ output: tuple of nodes and edges</p>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[{&#39;identifier&#39;: &#39;10013&#39;,
+  &#39;name&#39;: &#39;HDAC6&#39;,
+  &#39;label&#39;: &#39;Gene&#39;,
   &#39;license&#39;: &#39;CCO 1.0&#39;,
   &#39;chromosome&#39;: &#39;X&#39;,
-  &#39;name&#39;: &#39;HDAC6&#39;,
   &#39;description&#39;: &#39;histone deacetylase 6&#39;,
-  &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/10013&#39;,
-  &#39;label&#39;: &#39;Gene&#39;},
+  &#39;source&#39;: &#39;Entrez Gene:210321&#39;},
  {&#39;identifier&#39;: &#39;3326&#39;,
+  &#39;name&#39;: &#39;HSP90AB1&#39;,
+  &#39;label&#39;: &#39;Gene&#39;,
   &#39;license&#39;: &#39;CCO 1.0&#39;,
   &#39;chromosome&#39;: &#39;6&#39;,
-  &#39;name&#39;: &#39;HSP90AB1&#39;,
   &#39;description&#39;: &#39;heat shock protein 90 alpha family class B member 1&#39;,
-  &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/3326&#39;,
-  &#39;label&#39;: &#39;Gene&#39;}]</pre>
+  &#39;source&#39;: &#39;Entrez Gene:210321&#39;}]</pre>
 </div>
 
 </div>
@@ -401,37 +402,37 @@ output: tuple of nodes and edges</p>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[{&#39;identifier&#39;: &#39;10013&#39;,
+  &#39;name&#39;: &#39;HDAC6&#39;,
+  &#39;label&#39;: &#39;Gene&#39;,
   &#39;license&#39;: &#39;CCO 1.0&#39;,
   &#39;chromosome&#39;: &#39;X&#39;,
-  &#39;name&#39;: &#39;HDAC6&#39;,
   &#39;description&#39;: &#39;histone deacetylase 6&#39;,
-  &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/10013&#39;,
-  &#39;label&#39;: &#39;Gene&#39;},
+  &#39;source&#39;: &#39;Entrez Gene:210321&#39;},
  {&#39;identifier&#39;: &#39;3326&#39;,
+  &#39;name&#39;: &#39;HSP90AB1&#39;,
+  &#39;label&#39;: &#39;Gene&#39;,
   &#39;license&#39;: &#39;CCO 1.0&#39;,
   &#39;chromosome&#39;: &#39;6&#39;,
-  &#39;name&#39;: &#39;HSP90AB1&#39;,
   &#39;description&#39;: &#39;heat shock protein 90 alpha family class B member 1&#39;,
-  &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/3326&#39;,
-  &#39;label&#39;: &#39;Gene&#39;},
+  &#39;source&#39;: &#39;Entrez Gene:210321&#39;},
  {&#39;identifier&#39;: &#39;7415&#39;,
+  &#39;name&#39;: &#39;VCP&#39;,
+  &#39;label&#39;: &#39;Gene&#39;,
   &#39;license&#39;: &#39;CCO 1.0&#39;,
   &#39;chromosome&#39;: &#39;9&#39;,
-  &#39;name&#39;: &#39;VCP&#39;,
   &#39;description&#39;: &#39;valosin containing protein&#39;,
-  &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/7415&#39;,
-  &#39;label&#39;: &#39;Gene&#39;},
+  &#39;source&#39;: &#39;Entrez Gene:210321&#39;},
  {&#39;identifier&#39;: &#39;10376&#39;,
+  &#39;name&#39;: &#39;TUBA1B&#39;,
+  &#39;label&#39;: &#39;Gene&#39;,
   &#39;license&#39;: &#39;CCO 1.0&#39;,
   &#39;chromosome&#39;: &#39;12&#39;,
-  &#39;name&#39;: &#39;TUBA1B&#39;,
   &#39;description&#39;: &#39;tubulin alpha 1b&#39;,
-  &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/10376&#39;,
-  &#39;label&#39;: &#39;Gene&#39;}]</pre>
+  &#39;source&#39;: &#39;Entrez Gene:210321&#39;}]</pre>
 </div>
 
 </div>
@@ -538,7 +539,8 @@ output: tuple of nodes and edges</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<span class="n">df</span>
 </pre></div>
 
     </div>
@@ -571,59 +573,59 @@ output: tuple of nodes and edges</p>
     <tr style="text-align: right;">
       <th></th>
       <th>identifier</th>
+      <th>name</th>
+      <th>label</th>
       <th>license</th>
       <th>chromosome</th>
-      <th>name</th>
       <th>description</th>
-      <th>source</th>
       <th>url</th>
-      <th>label</th>
+      <th>source</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>10013</td>
+      <td>HDAC6</td>
+      <td>Gene</td>
       <td>CCO 1.0</td>
       <td>X</td>
-      <td>HDAC6</td>
       <td>histone deacetylase 6</td>
-      <td>Entrez Gene:210321</td>
       <td>http://identifiers.org/ncbigene/10013</td>
-      <td>Gene</td>
+      <td>Entrez Gene:210321</td>
     </tr>
     <tr>
       <th>1</th>
       <td>3326</td>
+      <td>HSP90AB1</td>
+      <td>Gene</td>
       <td>CCO 1.0</td>
       <td>6</td>
-      <td>HSP90AB1</td>
       <td>heat shock protein 90 alpha family class B mem...</td>
-      <td>Entrez Gene:210321</td>
       <td>http://identifiers.org/ncbigene/3326</td>
-      <td>Gene</td>
+      <td>Entrez Gene:210321</td>
     </tr>
     <tr>
       <th>2</th>
       <td>7415</td>
+      <td>VCP</td>
+      <td>Gene</td>
       <td>CCO 1.0</td>
       <td>9</td>
-      <td>VCP</td>
       <td>valosin containing protein</td>
-      <td>Entrez Gene:210321</td>
       <td>http://identifiers.org/ncbigene/7415</td>
-      <td>Gene</td>
+      <td>Entrez Gene:210321</td>
     </tr>
     <tr>
       <th>3</th>
       <td>10376</td>
+      <td>TUBA1B</td>
+      <td>Gene</td>
       <td>CCO 1.0</td>
       <td>12</td>
-      <td>TUBA1B</td>
       <td>tubulin alpha 1b</td>
-      <td>Entrez Gene:210321</td>
       <td>http://identifiers.org/ncbigene/10376</td>
-      <td>Gene</td>
+      <td>Entrez Gene:210321</td>
     </tr>
   </tbody>
 </table>
