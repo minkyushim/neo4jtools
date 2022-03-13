@@ -1,4 +1,4 @@
-repository: {user}/Simple Neo4j HTTP API Client
+repository: minkyushim/neo4jtools
 output: web
 topnav_title: Simple Neo4j HTTP API Client
 site_title: Simple Neo4j HTTP API Client
