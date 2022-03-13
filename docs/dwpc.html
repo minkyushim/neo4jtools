@@ -40,13 +40,14 @@ nb_path: "01_dwpc.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="make_dwpc_query" class="doc_header"><code>make_dwpc_query</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/dwpc.py#L6" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_dwpc_query</code>(<strong><code>genes</code></strong>, <strong><code>reltype</code></strong>, <strong><code>hops</code></strong>, <strong><code>only_relations_with_pmid</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="make_dwpc_query" class="doc_header"><code>make_dwpc_query</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/dwpc.py#L6" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_dwpc_query</code>(<strong><code>genes</code></strong>, <strong><code>reltype</code></strong>, <strong><code>hops</code></strong>, <strong><code>dwpc_score_prop_name</code></strong>=<em><code>'dwpc_score'</code></em>, <strong><code>only_relations_with_pmid</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Make a cypher query to calculate DWPC</p>
 <p>input parameters</p>
 <p>genes : gene list
 reltype : edge type
 hops : number of hops to calculate
+dwpc_score_prop_name : name of dwpc score property, default dwpc_score
 only_relations_with_pmid : include only relations with pubmed_id</p>
 <p>output
 query:string</p>
@@ -72,7 +73,7 @@ query:string</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="patterns_to_query" class="doc_header"><code>patterns_to_query</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/dwpc.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>patterns_to_query</code>(<strong><code>patterns</code></strong>)</p>
+<h4 id="patterns_to_query" class="doc_header"><code>patterns_to_query</code><a href="https://github.com/me/neo4jtools/tree/{branch}/neo4jtools/dwpc.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>patterns_to_query</code>(<strong><code>patterns</code></strong>)</p>
 </blockquote>
 <p>Convert pattern list to cypher query</p>
 <p>Example</p>

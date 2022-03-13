@@ -7,7 +7,11 @@ index = {"SimpleNeo4jHTTPAPIClient": "00_core.ipynb",
          "patterns_to_query": "01_dwpc.ipynb",
          "parse_result_row_graph": "02_utils.ipynb",
          "drop_duplicates": "02_utils.ipynb",
-         "parse_result_graph": "02_utils.ipynb"}
+         "parse_result_graph": "02_utils.ipynb",
+         "graph_renderer": "02_utils.ipynb",
+         "row_renderer": "02_utils.ipynb",
+         "get_graph_for_ipycytoscape": "02_utils.ipynb",
+         "draw": "02_utils.ipynb"}
 
 modules = ["core.py",
            "dwpc.py",

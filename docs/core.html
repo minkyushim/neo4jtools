@@ -161,7 +161,7 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">)</span>
 <span class="n">result</span>
 </pre></div>
 
@@ -177,7 +177,11 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;columns&#39;: [&#39;count(n)&#39;], &#39;data&#39;: [{&#39;row&#39;: [85852], &#39;meta&#39;: [None]}]}</pre>
+<pre>{&#39;results&#39;: [{&#39;columns&#39;: [&#39;count(n)&#39;],
+   &#39;data&#39;: [{&#39;row&#39;: [85852],
+     &#39;meta&#39;: [None],
+     &#39;graph&#39;: {&#39;nodes&#39;: [], &#39;relationships&#39;: []}}]}],
+ &#39;errors&#39;: []}</pre>
 </div>
 
 </div>
@@ -190,7 +194,7 @@ nb_path: "00_core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Example-output_format='graph'">Example output_format='graph'<a class="anchor-link" href="#Example-output_format='graph'"> </a></h1>
+<h2 id="row_renderer-(output_format='row')-example"><a href="/neo4jtools/utils.html#row_renderer"><code>row_renderer</code></a> (output_format='row') example<a class="anchor-link" href="#row_renderer-(output_format='row')-example"> </a></h2>
 </div>
 </div>
 </div>
@@ -201,10 +205,41 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match p=()--() return p limit 3;&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;graph&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match p=(n)-[r]-(m) return n.identifier, n.name, type(r), m.identifier, m.name limit 3;&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
+<span class="n">result</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[{&#39;n.identifier&#39;: &#39;GO:0000002&#39;,
+  &#39;n.name&#39;: &#39;mitochondrial genome maintenance&#39;,
+  &#39;type(r)&#39;: &#39;PARTICIPATES_GpBP&#39;,
+  &#39;m.identifier&#39;: &#39;4358&#39;,
+  &#39;m.name&#39;: &#39;MPV17&#39;},
+ {&#39;n.identifier&#39;: &#39;GO:0000002&#39;,
+  &#39;n.name&#39;: &#39;mitochondrial genome maintenance&#39;,
+  &#39;type(r)&#39;: &#39;PARTICIPATES_GpBP&#39;,
+  &#39;m.identifier&#39;: &#39;291&#39;,
+  &#39;m.name&#39;: &#39;SLC25A4&#39;},
+ {&#39;n.identifier&#39;: &#39;GO:0000002&#39;,
+  &#39;n.name&#39;: &#39;mitochondrial genome maintenance&#39;,
+  &#39;type(r)&#39;: &#39;PARTICIPATES_GpBP&#39;,
+  &#39;m.identifier&#39;: &#39;55186&#39;,
+  &#39;m.name&#39;: &#39;SLC25A36&#39;}]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -218,7 +253,98 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>n.identifier</th>
+      <th>n.name</th>
+      <th>type(r)</th>
+      <th>m.identifier</th>
+      <th>m.name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GO:0000002</td>
+      <td>mitochondrial genome maintenance</td>
+      <td>PARTICIPATES_GpBP</td>
+      <td>4358</td>
+      <td>MPV17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>GO:0000002</td>
+      <td>mitochondrial genome maintenance</td>
+      <td>PARTICIPATES_GpBP</td>
+      <td>291</td>
+      <td>SLC25A4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>GO:0000002</td>
+      <td>mitochondrial genome maintenance</td>
+      <td>PARTICIPATES_GpBP</td>
+      <td>55186</td>
+      <td>SLC25A36</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="graph_renderer-(output_format='graph')-example"><a href="/neo4jtools/utils.html#graph_renderer"><code>graph_renderer</code></a> (output_format='graph') example<a class="anchor-link" href="#graph_renderer-(output_format='graph')-example"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match p=()--() return p limit 3;&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;graph&#39;</span><span class="p">)</span>
+<span class="n">result</span>
 </pre></div>
 
     </div>
@@ -234,37 +360,41 @@ nb_path: "00_core.ipynb"
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;nodes&#39;: [{&#39;identifier&#39;: &#39;4358&#39;,
-   &#39;license&#39;: &#39;CCO 1.0&#39;,
-   &#39;chromosome&#39;: &#39;2&#39;,
    &#39;name&#39;: &#39;MPV17&#39;,
-   &#39;description&#39;: &#39;mitochondrial inner membrane protein MPV17&#39;,
+   &#39;label&#39;: &#39;Gene&#39;,
+   &#39;license&#39;: &#39;CCO 1.0&#39;,
    &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
+   &#39;minkyu_degree&#39;: 14.0,
    &#39;url&#39;: &#39;http://identifiers.org/ncbigene/4358&#39;,
-   &#39;label&#39;: &#39;Gene&#39;},
+   &#39;description&#39;: &#39;mitochondrial inner membrane protein MPV17&#39;,
+   &#39;chromosome&#39;: &#39;2&#39;},
   {&#39;identifier&#39;: &#39;GO:0000002&#39;,
-   &#39;license&#39;: &#39;CC BY 4.0&#39;,
-   &#39;chromosome&#39;: nan,
    &#39;name&#39;: &#39;mitochondrial genome maintenance&#39;,
-   &#39;description&#39;: nan,
+   &#39;label&#39;: &#39;BiologicalProcess&#39;,
+   &#39;license&#39;: &#39;CC BY 4.0&#39;,
    &#39;source&#39;: &#39;Gene Ontology:2021-02-01&#39;,
+   &#39;minkyu_degree&#39;: nan,
    &#39;url&#39;: &#39;http://purl.obolibrary.org/obo/GO:0000002&#39;,
-   &#39;label&#39;: &#39;BiologicalProcess&#39;},
+   &#39;description&#39;: nan,
+   &#39;chromosome&#39;: nan},
   {&#39;identifier&#39;: &#39;291&#39;,
-   &#39;license&#39;: &#39;CCO 1.0&#39;,
-   &#39;chromosome&#39;: &#39;4&#39;,
    &#39;name&#39;: &#39;SLC25A4&#39;,
-   &#39;description&#39;: &#39;solute carrier family 25 member 4&#39;,
-   &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
-   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/291&#39;,
-   &#39;label&#39;: &#39;Gene&#39;},
-  {&#39;identifier&#39;: &#39;55186&#39;,
+   &#39;label&#39;: &#39;Gene&#39;,
    &#39;license&#39;: &#39;CCO 1.0&#39;,
-   &#39;chromosome&#39;: &#39;3&#39;,
-   &#39;name&#39;: &#39;SLC25A36&#39;,
-   &#39;description&#39;: &#39;solute carrier family 25 member 36&#39;,
    &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
+   &#39;minkyu_degree&#39;: 123.0,
+   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/291&#39;,
+   &#39;description&#39;: &#39;solute carrier family 25 member 4&#39;,
+   &#39;chromosome&#39;: &#39;4&#39;},
+  {&#39;identifier&#39;: &#39;55186&#39;,
+   &#39;name&#39;: &#39;SLC25A36&#39;,
+   &#39;label&#39;: &#39;Gene&#39;,
+   &#39;license&#39;: &#39;CCO 1.0&#39;,
+   &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
+   &#39;minkyu_degree&#39;: 2.0,
    &#39;url&#39;: &#39;http://identifiers.org/ncbigene/55186&#39;,
-   &#39;label&#39;: &#39;Gene&#39;}],
+   &#39;description&#39;: &#39;solute carrier family 25 member 36&#39;,
+   &#39;chromosome&#39;: &#39;3&#39;}],
  &#39;edges&#39;: [{&#39;type&#39;: &#39;PARTICIPATES_GpBP&#39;,
    &#39;start_identifier&#39;: &#39;4358&#39;,
    &#39;start_name&#39;: &#39;MPV17&#39;,
@@ -296,6 +426,23 @@ nb_path: "00_core.ipynb"
 
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;nodes&#39;</span> <span class="ow">in</span> <span class="n">result</span> <span class="ow">and</span> <span class="s1">&#39;edges&#39;</span> <span class="ow">in</span> <span class="n">result</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -342,59 +489,64 @@ nb_path: "00_core.ipynb"
     <tr style="text-align: right;">
       <th></th>
       <th>identifier</th>
-      <th>license</th>
-      <th>chromosome</th>
       <th>name</th>
-      <th>description</th>
-      <th>source</th>
-      <th>url</th>
       <th>label</th>
+      <th>license</th>
+      <th>source</th>
+      <th>minkyu_degree</th>
+      <th>url</th>
+      <th>description</th>
+      <th>chromosome</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>4358</td>
-      <td>CCO 1.0</td>
-      <td>2</td>
       <td>MPV17</td>
-      <td>mitochondrial inner membrane protein MPV17</td>
-      <td>Entrez Gene:210321</td>
-      <td>http://identifiers.org/ncbigene/4358</td>
       <td>Gene</td>
+      <td>CCO 1.0</td>
+      <td>Entrez Gene:210321</td>
+      <td>14.0</td>
+      <td>http://identifiers.org/ncbigene/4358</td>
+      <td>mitochondrial inner membrane protein MPV17</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>1</th>
       <td>GO:0000002</td>
-      <td>CC BY 4.0</td>
-      <td>NaN</td>
       <td>mitochondrial genome maintenance</td>
-      <td>NaN</td>
-      <td>Gene Ontology:2021-02-01</td>
-      <td>http://purl.obolibrary.org/obo/GO:0000002</td>
       <td>BiologicalProcess</td>
+      <td>CC BY 4.0</td>
+      <td>Gene Ontology:2021-02-01</td>
+      <td>NaN</td>
+      <td>http://purl.obolibrary.org/obo/GO:0000002</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
       <td>291</td>
-      <td>CCO 1.0</td>
-      <td>4</td>
       <td>SLC25A4</td>
-      <td>solute carrier family 25 member 4</td>
-      <td>Entrez Gene:210321</td>
-      <td>http://identifiers.org/ncbigene/291</td>
       <td>Gene</td>
+      <td>CCO 1.0</td>
+      <td>Entrez Gene:210321</td>
+      <td>123.0</td>
+      <td>http://identifiers.org/ncbigene/291</td>
+      <td>solute carrier family 25 member 4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>3</th>
       <td>55186</td>
-      <td>CCO 1.0</td>
-      <td>3</td>
       <td>SLC25A36</td>
-      <td>solute carrier family 25 member 36</td>
-      <td>Entrez Gene:210321</td>
-      <td>http://identifiers.org/ncbigene/55186</td>
       <td>Gene</td>
+      <td>CCO 1.0</td>
+      <td>Entrez Gene:210321</td>
+      <td>2.0</td>
+      <td>http://identifiers.org/ncbigene/55186</td>
+      <td>solute carrier family 25 member 36</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -503,6 +655,63 @@ nb_path: "00_core.ipynb"
 
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="show-example"><code>show</code> example<a class="anchor-link" href="#show-example"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;MATCH p0=(:Gene{identifier:&#39;6932&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;51176&#39;})  MATCH p1=(:Gene{identifier:&#39;6932&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;8313&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;1499&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;51176&#39;})  MATCH p2=(:Gene{identifier:&#39;6932&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;4609&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;22943&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;51176&#39;})  MATCH p3=(:Gene{identifier:&#39;6932&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;4609&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;4353&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;51176&#39;}) RETURN p0,p1,p2,p3&quot;</span>
+<span class="n">query</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#34;MATCH p0=(:Gene{identifier:&#39;6932&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;51176&#39;})  MATCH p1=(:Gene{identifier:&#39;6932&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;8313&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;1499&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;51176&#39;})  MATCH p2=(:Gene{identifier:&#39;6932&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;4609&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;22943&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;51176&#39;})  MATCH p3=(:Gene{identifier:&#39;6932&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;4609&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;4353&#39;})-[:INTERACTS_GiG3]-&gt;(:Gene{identifier:&#39;51176&#39;}) RETURN p0,p1,p2,p3&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

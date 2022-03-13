@@ -3,7 +3,7 @@
 __all__ = ['make_dwpc_query', 'patterns_to_query']
 
 # Cell
-def make_dwpc_query(genes, reltype, hops, only_relations_with_pmid=False):
+def make_dwpc_query(genes, reltype, hops, dwpc_score_prop_name='dwpc_score', only_relations_with_pmid=False):
     '''
     Make a cypher query to calculate DWPC
 
@@ -12,6 +12,7 @@ def make_dwpc_query(genes, reltype, hops, only_relations_with_pmid=False):
     genes : gene list
     reltype : edge type
     hops : number of hops to calculate
+    dwpc_score_prop_name : name of dwpc score property, default dwpc_score
     only_relations_with_pmid : include only relations with pubmed_id
 
     output
@@ -26,7 +27,7 @@ def make_dwpc_query(genes, reltype, hops, only_relations_with_pmid=False):
         n0.name as source_name
       , n1.name as target_name
       , p as path
-      , [r in relationships(p)|r.dwpc_score] as dwpc_scores
+      , [r in relationships(p)|r.{dwpc_score_prop_name}] as dwpc_scores
       , [r in relationships(p) | r.pubmed_id] as pubmed_ids
     WITH
         source_name
@@ -64,6 +65,7 @@ def make_dwpc_query(genes, reltype, hops, only_relations_with_pmid=False):
     qry=qry_template.format(genestr=genelist_str,
                             reltype=reltype,
                             hops=hops,
+                            dwpc_score_prop_name=dwpc_score_prop_name,
                             conditionstr=conditionstr)
     return qry
 

@@ -6,7 +6,7 @@ __all__ = ['SimpleNeo4jHTTPAPIClient']
 import os,json,base64
 import requests
 import pandas as pd
-from .utils import parse_result_graph
+from .utils import graph_renderer, row_renderer, draw
 
 class SimpleNeo4jHTTPAPIClient:
 
@@ -60,13 +60,23 @@ class SimpleNeo4jHTTPAPIClient:
         if len(output['errors']) > 0:
             raise Exception(output['errors'])
 
-        output=output['results'][0]
+
+        output_renderer=None
+        if output_format=='row':
+            output_renderer=row_renderer
 
         if output_format=='graph':
-            nodes, edges = parse_result_graph(output['data'])
-            output = {'nodes':nodes, 'edges':edges}
+            output_renderer=graph_renderer
+
+        if output_renderer:
+            output=output_renderer(output)
 
         return output
+
+    def show(self, query):
+        graph= self.execute_read_query(query, output_format='graph')
+        return draw([graph])
+
 
     def __repr__(self):
         return json.dumps({
@@ -84,5 +94,3 @@ class SimpleNeo4jHTTPAPIClient:
         b64token=base64.b64encode(authstr.encode())
         strtoken=b64token.decode()
         return strtoken
-
-
