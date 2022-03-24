@@ -145,7 +145,7 @@ RETURN p0,p1,p2,p3"</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">query</span><span class="o">=</span><span class="n">make_dwpc_query</span><span class="p">(</span><span class="n">genes</span><span class="p">,</span> <span class="n">reltype</span><span class="p">,</span> <span class="n">hops</span><span class="p">)</span>
-<span class="n">query</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -157,12 +157,131 @@ RETURN p0,p1,p2,p3"</p>
 
 <div class="output_area">
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;MATCH p=(n0:Gene)-[:INTERACTS_GiG3*..2]-&gt;(n1:Gene) \n    WHERE n0.name in [\&#39;LEF1\&#39;,\&#39;TCF7\&#39;,\&#39;SERINC5\&#39;]\n      AND n1.name in [\&#39;LEF1\&#39;,\&#39;TCF7\&#39;,\&#39;SERINC5\&#39;]\n      AND n0 &lt;&gt; n1\n      \n    WITH \n        n0.name as source_name\n      , n1.name as target_name\n      , p as path\n      , [r in relationships(p)|r.dwpc_score] as dwpc_scores\n      , [r in relationships(p) | r.pubmed_id] as pubmed_ids\n    WITH \n        source_name\n      , target_name\n      , length(path) as len\n      , reduce(acc=1, d in dwpc_scores|acc*d) as dwpc_score\n      , [n IN nodes(path) | labels(n)[0]] as node_labels\n      , [n IN nodes(path) | n.identifier] as node_identifiers\n      , [r IN relationships(path) | type(r)] as rel_types\n      , reduce(acc=\&#39;\&#39;, s in pubmed_ids | acc+\&#39;;\&#39;+s) as pubmed_ids\n    WITH \n        source_name\n      , target_name\n      , dwpc_score as dwpc\n      , [r IN rel_types | split(r, \&#39;_\&#39;)[1]] as rtypes\n      , &#34;(:&#34;+node_labels[0]+&#34;{identifier:\&#39;&#34;+ node_identifiers[0] +&#34;\&#39;})&#34; as head\n      , [i IN range(0,len-1)| &#34;-[:&#34;+ rel_types[i] +&#34;]-&gt;(:&#34;+node_labels[i+1]+&#34;{identifier:\&#39;&#34;+ node_identifiers[i+1] +&#34;\&#39;})&#34; ] as tail\n      , substring(pubmed_ids,1) as pubmed_ids\n    RETURN \n        source_name\n      , target_name\n      , dwpc\n      , head + reduce(acc=\&#39;\&#39;, s in tail |acc+s) as pattern\n      , reduce(acc=\&#39;\&#39;, s IN rtypes | acc + s) as type_pattern\n      , pubmed_ids\n    &#39;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>MATCH p=(n0:Gene)-[:INTERACTS_GiG3|INTERACTS_GiG3*..2]-&gt;(n1:Gene) 
+    WHERE n0.name in [&#39;LEF1&#39;,&#39;TCF7&#39;,&#39;SERINC5&#39;]
+      AND n1.name in [&#39;LEF1&#39;,&#39;TCF7&#39;,&#39;SERINC5&#39;]
+      AND n0 &lt;&gt; n1
+      
+    WITH 
+        n0.name as source_name
+      , n1.name as target_name
+      , p as path
+      , [r in relationships(p)|r.dwpc_score] as dwpc_scores
+      , [r in relationships(p) | r.pubmed_id] as pubmed_ids
+    WITH 
+        source_name
+      , target_name
+      , length(path) as len
+      , reduce(acc=1, d in dwpc_scores|acc*d) as dwpc_score
+      , [n IN nodes(path) | labels(n)[0]] as node_labels
+      , [n IN nodes(path) | n.identifier] as node_identifiers
+      , [r IN relationships(path) | type(r)] as rel_types
+      , reduce(acc=&#39;&#39;, s in pubmed_ids | acc+&#39;;&#39;+s) as pubmed_ids
+    WITH 
+        source_name
+      , target_name
+      , dwpc_score as dwpc
+      , [r IN rel_types | split(r, &#39;_&#39;)[1]] as rtypes
+      , &#34;(:&#34;+node_labels[0]+&#34;{identifier:&#39;&#34;+ node_identifiers[0] +&#34;&#39;})&#34; as head
+      , [i IN range(0,len-1)| &#34;-[:&#34;+ rel_types[i] +&#34;]-&gt;(:&#34;+node_labels[i+1]+&#34;{identifier:&#39;&#34;+ node_identifiers[i+1] +&#34;&#39;})&#34; ] as tail
+      , substring(pubmed_ids,1) as pubmed_ids
+    RETURN 
+        source_name
+      , target_name
+      , dwpc
+      , head + reduce(acc=&#39;&#39;, s in tail |acc+s) as pattern
+      , reduce(acc=&#39;&#39;, s IN rtypes | acc + s) as type_pattern
+      , pubmed_ids
+    
+</pre>
+</div>
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">genes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LEF1&#39;</span><span class="p">,</span><span class="s1">&#39;TCF7&#39;</span><span class="p">,</span><span class="s1">&#39;SERINC5&#39;</span><span class="p">]</span>
+<span class="n">reltype</span><span class="o">=</span><span class="s1">&#39;INTERACTS_GiG3|INTERACTS_GiG3&#39;</span>
+<span class="n">hops</span><span class="o">=</span><span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">query</span><span class="o">=</span><span class="n">make_dwpc_query</span><span class="p">(</span><span class="n">genes</span><span class="p">,</span> <span class="n">reltype</span><span class="p">,</span> <span class="n">hops</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>MATCH p=(n0:Gene)-[:INTERACTS_GiG3|INTERACTS_GiG3*..2]-&gt;(n1:Gene) 
+    WHERE n0.name in [&#39;LEF1&#39;,&#39;TCF7&#39;,&#39;SERINC5&#39;]
+      AND n1.name in [&#39;LEF1&#39;,&#39;TCF7&#39;,&#39;SERINC5&#39;]
+      AND n0 &lt;&gt; n1
+      
+    WITH 
+        n0.name as source_name
+      , n1.name as target_name
+      , p as path
+      , [r in relationships(p)|r.dwpc_score] as dwpc_scores
+      , [r in relationships(p) | r.pubmed_id] as pubmed_ids
+    WITH 
+        source_name
+      , target_name
+      , length(path) as len
+      , reduce(acc=1, d in dwpc_scores|acc*d) as dwpc_score
+      , [n IN nodes(path) | labels(n)[0]] as node_labels
+      , [n IN nodes(path) | n.identifier] as node_identifiers
+      , [r IN relationships(path) | type(r)] as rel_types
+      , reduce(acc=&#39;&#39;, s in pubmed_ids | acc+&#39;;&#39;+s) as pubmed_ids
+    WITH 
+        source_name
+      , target_name
+      , dwpc_score as dwpc
+      , [r IN rel_types | split(r, &#39;_&#39;)[1]] as rtypes
+      , &#34;(:&#34;+node_labels[0]+&#34;{identifier:&#39;&#34;+ node_identifiers[0] +&#34;&#39;})&#34; as head
+      , [i IN range(0,len-1)| &#34;-[:&#34;+ rel_types[i] +&#34;]-&gt;(:&#34;+node_labels[i+1]+&#34;{identifier:&#39;&#34;+ node_identifiers[i+1] +&#34;&#39;})&#34; ] as tail
+      , substring(pubmed_ids,1) as pubmed_ids
+    RETURN 
+        source_name
+      , target_name
+      , dwpc
+      , head + reduce(acc=&#39;&#39;, s in tail |acc+s) as pattern
+      , reduce(acc=&#39;&#39;, s IN rtypes | acc + s) as type_pattern
+      , pubmed_ids
+    
+</pre>
+</div>
 </div>
 
 </div>

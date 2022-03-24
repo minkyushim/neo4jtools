@@ -78,12 +78,18 @@ class SimpleNeo4jHTTPAPIClient:
         graph= self.execute_read_query(query, output_format='graph')
         return draw([graph])
 
-    def calculate_dwpc(self, genes, reltype, hops, dwpc_score_prop_name='dwpc_score', only_relations_with_pmid=True):
+    def calculate_dwpc(self, genes, reltype, hops,
+                       dwpc_score_prop_name='dwpc_score',
+                       only_relations_with_pmid=True,
+                       debug=False):
         qry=make_dwpc_query(genes,
                             reltype=reltype,
                             hops=hops,
                             dwpc_score_prop_name=dwpc_score_prop_name,
                             only_relations_with_pmid=only_relations_with_pmid)
+        if debug:
+            print(qry)
+
         results=self.execute_read_query(qry, output_format='row')
 
         return results
