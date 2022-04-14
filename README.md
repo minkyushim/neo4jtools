@@ -5,7 +5,7 @@
 
 ## Install
 
-`pip install git+git://github.com/minkyushim/neo4jtools.git`
+`pip install git+https://github.com/minkyushim/neo4jtools.git`
 
 ## How to use
 
