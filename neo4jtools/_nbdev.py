@@ -10,12 +10,13 @@ index = {"SimpleNeo4jHTTPAPIClient": "00_core.ipynb",
          "parse_result_graph": "02_utils.ipynb",
          "graph_renderer": "02_utils.ipynb",
          "row_renderer": "02_utils.ipynb",
-         "get_graph_for_ipycytoscape": "02_utils.ipynb",
-         "draw": "02_utils.ipynb"}
+         "get_graph_for_ipycytoscape": "03_graph.ipynb",
+         "draw": "03_graph.ipynb"}
 
 modules = ["core.py",
            "dwpc.py",
-           "utils.py"]
+           "utils.py",
+           "graph.py"]
 
 doc_url = "https://me.github.io/neo4jtools/"
 

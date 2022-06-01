@@ -7,7 +7,8 @@ import os,json,base64
 import requests
 import pandas as pd
 from .dwpc import make_dwpc_query
-from .utils import graph_renderer, row_renderer, draw
+from .utils import graph_renderer, row_renderer
+from .graph import draw
 
 class SimpleNeo4jHTTPAPIClient:
 
