@@ -8,12 +8,15 @@ def get_graph_for_ipycytoscape(neo4j_graph_dict):
     g={}
     g['nodes']=[{'data': {
         'id':n['identifier'],
-        'name':n['name']
+        'name':n['name'],
+        'label':n['label']
     }} for n in neo4j_graph_dict['nodes']]
 
     g['edges']=[{'data': {
         'source':e['start_identifier'],
-        'target':e['end_identifier']
+        'target':e['end_identifier'],
+        'type':e['type'],
+        'is_directional':e['is_directional'] if 'is_directional' in e else False
     }} for e in neo4j_graph_dict['edges']]
 
     return g
