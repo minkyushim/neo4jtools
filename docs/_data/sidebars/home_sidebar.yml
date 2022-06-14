@@ -21,6 +21,9 @@ entries:
     - output: web,pdf
       title: graph
       url: graph.html
+    - output: web,pdf
+      title: 'Determine formats : neo4j_httpapi, neo4j_parsed, neo4j_downloaded, cyto'
+      url: determine_graph_format.html
     output: web
     title: neo4jtools
   output: web

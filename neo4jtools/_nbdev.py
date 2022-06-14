@@ -11,7 +11,12 @@ index = {"SimpleNeo4jHTTPAPIClient": "00_core.ipynb",
          "graph_renderer": "02_utils.ipynb",
          "row_renderer": "02_utils.ipynb",
          "get_graph_for_ipycytoscape": "03_graph.ipynb",
-         "draw": "03_graph.ipynb"}
+         "draw": "03_graph.ipynb",
+         "is_neo4j_httpapi_format": "04_determine_graph_format.ipynb",
+         "is_neo4j_parsed_format": "04_determine_graph_format.ipynb",
+         "is_cytoscape_format": "04_determine_graph_format.ipynb",
+         "is_neo4j_downloaded_format": "04_determine_graph_format.ipynb",
+         "false": "04_determine_graph_format.ipynb"}
 
 modules = ["core.py",
            "dwpc.py",
