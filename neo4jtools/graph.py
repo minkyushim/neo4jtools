@@ -8,9 +8,14 @@ from IPython.display import IFrame
 import numpy as np
 nan = np.nan
 
-def draw_graph(input_str, url='localhost:5000', width='100%', height='500'):
-    resp=requests.post(
-        url='http://{}/graph'.format(url),
-        data={'data':input_str}
-    )
-    return IFrame(resp.url, width=width, height=height)
+def draw_graph(input_str, url='http://localhost:5000', internal_url=None, width='100%', height='500'):
+    g_url='{}/graph'.format(url)
+    if internal_url is not None:
+        g_url='{}/graph'.format(internal_url)
+
+    resp=requests.post(url=g_url, data={'data':input_str})
+    iframe_url=resp.url
+    if internal_url is not None:
+        iframe_url = iframe_url.replace(internal_url, url)
+
+    return IFrame(iframe_url, width=width, height=height)
