@@ -8,7 +8,6 @@ import requests
 import pandas as pd
 from .dwpc import make_dwpc_query
 from .utils import graph_renderer, row_renderer
-from .graph import draw
 
 class SimpleNeo4jHTTPAPIClient:
 
@@ -33,6 +32,9 @@ class SimpleNeo4jHTTPAPIClient:
         self.db=db
 
     def execute_read_query(self, query, output_format=['row','graph']):
+        return execute_query(self, query, output_format)
+
+    def execute_query(self, query, output_format=['row','graph']):
         url=self.transaction.format(databaseName=self.db) + '/commit'
         headers={
             "content-type": "application/json"
@@ -75,9 +77,6 @@ class SimpleNeo4jHTTPAPIClient:
 
         return output
 
-    def show(self, query):
-        graph= self.execute_read_query(query, output_format='graph')
-        return draw([graph])
 
     def calculate_dwpc(self, genes, reltype, hops,
                        dwpc_score_prop_name='dwpc_score',

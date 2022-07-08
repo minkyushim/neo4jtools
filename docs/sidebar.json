@@ -4,6 +4,7 @@
     "Simple Neo4j HTTP API Client": "core.html",
     "DWPC": "dwpc.html",
     "Utils": "utils.html",
-    "graph": "graph.html"
+    "graph": "graph.html",
+    "Determine formats : neo4j_httpapi, neo4j_parsed, neo4j_downloaded, cyto": "determine_graph_format.html"
   }
 }
