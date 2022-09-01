@@ -89,7 +89,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#34;classname&#34;: &#34;SimpleNeo4jHTTPAPIClient&#34;, &#34;url&#34;: &#34;http://localhost:7474&#34;, &#34;neo4j_version&#34;: &#34;4.4.3&#34;, &#34;neo4j_edition&#34;: &#34;community&#34;, &#34;db&#34;: &#34;neo4j&#34;, &#34;auth&#34;: false}</pre>
+<pre>{&#34;classname&#34;: &#34;SimpleNeo4jHTTPAPIClient&#34;, &#34;url&#34;: &#34;http://localhost:7474&#34;, &#34;neo4j_version&#34;: &#34;4.4.5&#34;, &#34;neo4j_edition&#34;: &#34;community&#34;, &#34;db&#34;: &#34;neo4j&#34;, &#34;auth&#34;: false}</pre>
 </div>
 
 </div>
@@ -108,7 +108,7 @@ nb_path: "00_core.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">])</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">])</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="k">assert</span> <span class="n">e</span>
 </pre></div>
@@ -143,7 +143,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#34;classname&#34;: &#34;SimpleNeo4jHTTPAPIClient&#34;, &#34;url&#34;: &#34;http://localhost:7474&#34;, &#34;neo4j_version&#34;: &#34;4.4.3&#34;, &#34;neo4j_edition&#34;: &#34;community&#34;, &#34;db&#34;: &#34;neo4j&#34;, &#34;auth&#34;: true}</pre>
+<pre>{&#34;classname&#34;: &#34;SimpleNeo4jHTTPAPIClient&#34;, &#34;url&#34;: &#34;http://localhost:7474&#34;, &#34;neo4j_version&#34;: &#34;4.4.5&#34;, &#34;neo4j_edition&#34;: &#34;community&#34;, &#34;db&#34;: &#34;neo4j&#34;, &#34;auth&#34;: true}</pre>
 </div>
 
 </div>
@@ -161,7 +161,7 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;match (n) return count(n);&#39;</span><span class="p">)</span>
 <span class="n">result</span>
 </pre></div>
 
@@ -178,7 +178,7 @@ nb_path: "00_core.ipynb"
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;results&#39;: [{&#39;columns&#39;: [&#39;count(n)&#39;],
-   &#39;data&#39;: [{&#39;row&#39;: [85852],
+   &#39;data&#39;: [{&#39;row&#39;: [82523],
      &#39;meta&#39;: [None],
      &#39;graph&#39;: {&#39;nodes&#39;: [], &#39;relationships&#39;: []}}]}],
  &#39;errors&#39;: []}</pre>
@@ -205,7 +205,7 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match p=(n)-[r]-(m) return n.identifier, n.name, type(r), m.identifier, m.name limit 3;&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;match p=(n)-[r]-(m) return n.identifier, n.name, type(r), m.identifier, m.name limit 3;&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
 <span class="n">result</span>
 </pre></div>
 
@@ -224,8 +224,8 @@ nb_path: "00_core.ipynb"
 <pre>[{&#39;n.identifier&#39;: &#39;GO:0000002&#39;,
   &#39;n.name&#39;: &#39;mitochondrial genome maintenance&#39;,
   &#39;type(r)&#39;: &#39;PARTICIPATES_GpBP&#39;,
-  &#39;m.identifier&#39;: &#39;4358&#39;,
-  &#39;m.name&#39;: &#39;MPV17&#39;},
+  &#39;m.identifier&#39;: &#39;92667&#39;,
+  &#39;m.name&#39;: &#39;MGME1&#39;},
  {&#39;n.identifier&#39;: &#39;GO:0000002&#39;,
   &#39;n.name&#39;: &#39;mitochondrial genome maintenance&#39;,
   &#39;type(r)&#39;: &#39;PARTICIPATES_GpBP&#39;,
@@ -234,8 +234,8 @@ nb_path: "00_core.ipynb"
  {&#39;n.identifier&#39;: &#39;GO:0000002&#39;,
   &#39;n.name&#39;: &#39;mitochondrial genome maintenance&#39;,
   &#39;type(r)&#39;: &#39;PARTICIPATES_GpBP&#39;,
-  &#39;m.identifier&#39;: &#39;55186&#39;,
-  &#39;m.name&#39;: &#39;SLC25A36&#39;}]</pre>
+  &#39;m.identifier&#39;: &#39;4205&#39;,
+  &#39;m.name&#39;: &#39;MEF2A&#39;}]</pre>
 </div>
 
 </div>
@@ -298,8 +298,8 @@ nb_path: "00_core.ipynb"
       <td>GO:0000002</td>
       <td>mitochondrial genome maintenance</td>
       <td>PARTICIPATES_GpBP</td>
-      <td>4358</td>
-      <td>MPV17</td>
+      <td>92667</td>
+      <td>MGME1</td>
     </tr>
     <tr>
       <th>1</th>
@@ -314,8 +314,8 @@ nb_path: "00_core.ipynb"
       <td>GO:0000002</td>
       <td>mitochondrial genome maintenance</td>
       <td>PARTICIPATES_GpBP</td>
-      <td>55186</td>
-      <td>SLC25A36</td>
+      <td>4205</td>
+      <td>MEF2A</td>
     </tr>
   </tbody>
 </table>
@@ -343,7 +343,7 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_read_query</span><span class="p">(</span><span class="s1">&#39;match p=()--() return p limit 3;&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;graph&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;match p=()--() return p limit 3;&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;graph&#39;</span><span class="p">)</span>
 <span class="n">result</span>
 </pre></div>
 
@@ -359,51 +359,111 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;nodes&#39;: [{&#39;identifier&#39;: &#39;4358&#39;,
-   &#39;name&#39;: &#39;MPV17&#39;,
+<pre>{&#39;nodes&#39;: [{&#39;identifier&#39;: &#39;92667&#39;,
+   &#39;name&#39;: &#39;MGME1&#39;,
    &#39;label&#39;: &#39;Gene&#39;,
+   &#39;ensembl_id&#39;: &#39;ENSG00000125871&#39;,
+   &#39;synonyms&#39;: &#39;C20orf72|DDK1|MTDPS11|bA504H3.4&#39;,
+   &#39;druggability_source&#39;: &#39;TCRD:v6.12.4&#39;,
+   &#39;idg_eligible&#39;: &#39;0.0&#39;,
+   &#39;url3&#39;: &#39;https://genetics.opentargets.org/gene/ENSG00000125871&#39;,
+   &#39;chromosome&#39;: &#39;20&#39;,
+   &#39;url2&#39;: &#39;https://www.genecards.org/cgi-bin/carddisp.pl?gene=MGME1&#39;,
    &#39;license&#39;: &#39;CCO 1.0&#39;,
-   &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
-   &#39;minkyu_degree&#39;: 14.0,
-   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/4358&#39;,
-   &#39;description&#39;: &#39;mitochondrial inner membrane protein MPV17&#39;,
-   &#39;chromosome&#39;: &#39;2&#39;},
+   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/92667&#39;,
+   &#39;pdb&#39;: &#39;5ZYV;5ZYW;5ZYU;5ZYT&#39;,
+   &#39;description&#39;: &#39;mitochondrial genome maintenance exonuclease 1&#39;,
+   &#39;is_TF&#39;: &#39;False&#39;,
+   &#39;uniprot_id&#39;: &#39;Q9BQP7;Q5QPE7&#39;,
+   &#39;druggability_level&#39;: &#39;Tbio&#39;,
+   &#39;source&#39;: &#39;Entrez Gene:20220425&#39;,
+   &#39;location&#39;: &#39;Mitochondrion(uniprot);Mitochondria(HPA_main)&#39;,
+   &#39;xrefs&#39;: &#39;MIM:615076|HGNC:HGNC:16205|Ensembl:ENSG00000125871|AllianceGenome:HGNC:16205&#39;,
+   &#39;pubtator_score&#39;: nan,
+   &#39;druggable_url&#39;: nan,
+   &#39;druggable_sources&#39;: nan,
+   &#39;is_druggable&#39;: nan},
   {&#39;identifier&#39;: &#39;GO:0000002&#39;,
    &#39;name&#39;: &#39;mitochondrial genome maintenance&#39;,
    &#39;label&#39;: &#39;BiologicalProcess&#39;,
+   &#39;ensembl_id&#39;: nan,
+   &#39;synonyms&#39;: nan,
+   &#39;druggability_source&#39;: nan,
+   &#39;idg_eligible&#39;: nan,
+   &#39;url3&#39;: nan,
+   &#39;chromosome&#39;: nan,
+   &#39;url2&#39;: nan,
    &#39;license&#39;: &#39;CC BY 4.0&#39;,
-   &#39;source&#39;: &#39;Gene Ontology:2021-02-01&#39;,
-   &#39;minkyu_degree&#39;: nan,
    &#39;url&#39;: &#39;http://purl.obolibrary.org/obo/GO:0000002&#39;,
+   &#39;pdb&#39;: nan,
    &#39;description&#39;: nan,
-   &#39;chromosome&#39;: nan},
+   &#39;is_TF&#39;: nan,
+   &#39;uniprot_id&#39;: nan,
+   &#39;druggability_level&#39;: nan,
+   &#39;source&#39;: &#39;Gene Ontology:2021-02-01&#39;,
+   &#39;location&#39;: nan,
+   &#39;xrefs&#39;: nan,
+   &#39;pubtator_score&#39;: nan,
+   &#39;druggable_url&#39;: nan,
+   &#39;druggable_sources&#39;: nan,
+   &#39;is_druggable&#39;: nan},
   {&#39;identifier&#39;: &#39;291&#39;,
    &#39;name&#39;: &#39;SLC25A4&#39;,
    &#39;label&#39;: &#39;Gene&#39;,
+   &#39;ensembl_id&#39;: &#39;ENSG00000151729&#39;,
+   &#39;synonyms&#39;: &#39;AAC1|ANT|ANT 1|ANT1|MTDPS12|MTDPS12A|PEO2|PEO3|PEOA2|T1&#39;,
+   &#39;druggability_source&#39;: &#39;TCRD:v6.12.4;TCDA&#39;,
+   &#39;idg_eligible&#39;: &#39;0.0&#39;,
+   &#39;url3&#39;: &#39;https://genetics.opentargets.org/gene/ENSG00000151729&#39;,
+   &#39;chromosome&#39;: &#39;4&#39;,
+   &#39;url2&#39;: &#39;https://www.genecards.org/cgi-bin/carddisp.pl?gene=SLC25A4&#39;,
    &#39;license&#39;: &#39;CCO 1.0&#39;,
-   &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
-   &#39;minkyu_degree&#39;: 123.0,
    &#39;url&#39;: &#39;http://identifiers.org/ncbigene/291&#39;,
+   &#39;pdb&#39;: nan,
    &#39;description&#39;: &#39;solute carrier family 25 member 4&#39;,
-   &#39;chromosome&#39;: &#39;4&#39;},
-  {&#39;identifier&#39;: &#39;55186&#39;,
-   &#39;name&#39;: &#39;SLC25A36&#39;,
+   &#39;is_TF&#39;: &#39;False&#39;,
+   &#39;uniprot_id&#39;: &#39;A0A0S2Z3H3;P12235&#39;,
+   &#39;druggability_level&#39;: &#39;Tbio&#39;,
+   &#39;source&#39;: &#39;Entrez Gene:20220425&#39;,
+   &#39;location&#39;: &#39;Mitochondrion inner membrane(uniprot);Mitochondria(HPA_main)&#39;,
+   &#39;xrefs&#39;: &#39;MIM:103220|HGNC:HGNC:10990|Ensembl:ENSG00000151729|AllianceGenome:HGNC:10990&#39;,
+   &#39;pubtator_score&#39;: &#39;112.281869&#39;,
+   &#39;druggable_url&#39;: &#39;https://www.dgidb.org/genes/SLC25A4&#39;,
+   &#39;druggable_sources&#39;: &#39;DGIdb:v4.2.0(RussLampel,HopkinsGroom)&#39;,
+   &#39;is_druggable&#39;: &#39;True&#39;},
+  {&#39;identifier&#39;: &#39;4205&#39;,
+   &#39;name&#39;: &#39;MEF2A&#39;,
    &#39;label&#39;: &#39;Gene&#39;,
+   &#39;ensembl_id&#39;: &#39;ENSG00000068305&#39;,
+   &#39;synonyms&#39;: &#39;ADCAD1|RSRFC4|RSRFC9|mef2&#39;,
+   &#39;druggability_source&#39;: &#39;TCRD:v6.12.4&#39;,
+   &#39;idg_eligible&#39;: &#39;0.0&#39;,
+   &#39;url3&#39;: &#39;https://genetics.opentargets.org/gene/ENSG00000068305&#39;,
+   &#39;chromosome&#39;: &#39;15&#39;,
+   &#39;url2&#39;: &#39;https://www.genecards.org/cgi-bin/carddisp.pl?gene=MEF2A&#39;,
    &#39;license&#39;: &#39;CCO 1.0&#39;,
-   &#39;source&#39;: &#39;Entrez Gene:210321&#39;,
-   &#39;minkyu_degree&#39;: 2.0,
-   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/55186&#39;,
-   &#39;description&#39;: &#39;solute carrier family 25 member 36&#39;,
-   &#39;chromosome&#39;: &#39;3&#39;}],
+   &#39;url&#39;: &#39;http://identifiers.org/ncbigene/4205&#39;,
+   &#39;pdb&#39;: &#39;3P57;1C7U;3MU6;1LEW;6BYY;1EGW;3KOV;6BZ1&#39;,
+   &#39;description&#39;: &#39;myocyte enhancer factor 2A&#39;,
+   &#39;is_TF&#39;: &#39;True&#39;,
+   &#39;uniprot_id&#39;: &#39;A0A0S2Z454;Q02078;A0A0S2Z4N0;A0A0S2Z4C8;A0A0S2Z417;A0A0S2Z453;A8K720&#39;,
+   &#39;druggability_level&#39;: &#39;Tbio&#39;,
+   &#39;source&#39;: &#39;Entrez Gene:20220425&#39;,
+   &#39;location&#39;: &#39;Nucleus(uniprot);Nucleoplasm(HPA_main)&#39;,
+   &#39;xrefs&#39;: &#39;MIM:600660|HGNC:HGNC:6993|Ensembl:ENSG00000068305|AllianceGenome:HGNC:6993&#39;,
+   &#39;pubtator_score&#39;: nan,
+   &#39;druggable_url&#39;: nan,
+   &#39;druggable_sources&#39;: nan,
+   &#39;is_druggable&#39;: nan}],
  &#39;edges&#39;: [{&#39;type&#39;: &#39;PARTICIPATES_GpBP&#39;,
-   &#39;start_identifier&#39;: &#39;4358&#39;,
-   &#39;start_name&#39;: &#39;MPV17&#39;,
+   &#39;start_identifier&#39;: &#39;92667&#39;,
+   &#39;start_name&#39;: &#39;MGME1&#39;,
    &#39;end_identifier&#39;: &#39;GO:0000002&#39;,
    &#39;end_name&#39;: &#39;mitochondrial genome maintenance&#39;,
    &#39;license&#39;: &#39;CC By 4.0&#39;,
    &#39;unbiased&#39;: &#39;False&#39;,
-   &#39;source&#39;: &#39;NCBI gene2go&#39;,
-   &#39;version&#39;: &#39;2021-02-01&#39;},
+   &#39;is_directional&#39;: &#39;True&#39;,
+   &#39;source&#39;: &#39;NCBI gene2go:2021-02-01&#39;},
   {&#39;type&#39;: &#39;PARTICIPATES_GpBP&#39;,
    &#39;start_identifier&#39;: &#39;291&#39;,
    &#39;start_name&#39;: &#39;SLC25A4&#39;,
@@ -411,17 +471,17 @@ nb_path: "00_core.ipynb"
    &#39;end_name&#39;: &#39;mitochondrial genome maintenance&#39;,
    &#39;license&#39;: &#39;CC By 4.0&#39;,
    &#39;unbiased&#39;: &#39;False&#39;,
-   &#39;source&#39;: &#39;NCBI gene2go&#39;,
-   &#39;version&#39;: &#39;2021-02-01&#39;},
+   &#39;is_directional&#39;: &#39;True&#39;,
+   &#39;source&#39;: &#39;NCBI gene2go:2021-02-01&#39;},
   {&#39;type&#39;: &#39;PARTICIPATES_GpBP&#39;,
-   &#39;start_identifier&#39;: &#39;55186&#39;,
-   &#39;start_name&#39;: &#39;SLC25A36&#39;,
+   &#39;start_identifier&#39;: &#39;4205&#39;,
+   &#39;start_name&#39;: &#39;MEF2A&#39;,
    &#39;end_identifier&#39;: &#39;GO:0000002&#39;,
    &#39;end_name&#39;: &#39;mitochondrial genome maintenance&#39;,
    &#39;license&#39;: &#39;CC By 4.0&#39;,
    &#39;unbiased&#39;: &#39;False&#39;,
-   &#39;source&#39;: &#39;NCBI gene2go&#39;,
-   &#39;version&#39;: &#39;2021-02-01&#39;}]}</pre>
+   &#39;is_directional&#39;: &#39;True&#39;,
+   &#39;source&#39;: &#39;NCBI gene2go:2021-02-01&#39;}]}</pre>
 </div>
 
 </div>
@@ -491,36 +551,72 @@ nb_path: "00_core.ipynb"
       <th>identifier</th>
       <th>name</th>
       <th>label</th>
-      <th>license</th>
-      <th>source</th>
-      <th>minkyu_degree</th>
-      <th>url</th>
-      <th>description</th>
+      <th>ensembl_id</th>
+      <th>synonyms</th>
+      <th>druggability_source</th>
+      <th>idg_eligible</th>
+      <th>url3</th>
       <th>chromosome</th>
+      <th>url2</th>
+      <th>...</th>
+      <th>is_TF</th>
+      <th>uniprot_id</th>
+      <th>druggability_level</th>
+      <th>source</th>
+      <th>location</th>
+      <th>xrefs</th>
+      <th>pubtator_score</th>
+      <th>druggable_url</th>
+      <th>druggable_sources</th>
+      <th>is_druggable</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>4358</td>
-      <td>MPV17</td>
+      <td>92667</td>
+      <td>MGME1</td>
       <td>Gene</td>
-      <td>CCO 1.0</td>
-      <td>Entrez Gene:210321</td>
-      <td>14.0</td>
-      <td>http://identifiers.org/ncbigene/4358</td>
-      <td>mitochondrial inner membrane protein MPV17</td>
-      <td>2</td>
+      <td>ENSG00000125871</td>
+      <td>C20orf72|DDK1|MTDPS11|bA504H3.4</td>
+      <td>TCRD:v6.12.4</td>
+      <td>0.0</td>
+      <td>https://genetics.opentargets.org/gene/ENSG0000...</td>
+      <td>20</td>
+      <td>https://www.genecards.org/cgi-bin/carddisp.pl?...</td>
+      <td>...</td>
+      <td>False</td>
+      <td>Q9BQP7;Q5QPE7</td>
+      <td>Tbio</td>
+      <td>Entrez Gene:20220425</td>
+      <td>Mitochondrion(uniprot);Mitochondria(HPA_main)</td>
+      <td>MIM:615076|HGNC:HGNC:16205|Ensembl:ENSG0000012...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
       <td>GO:0000002</td>
       <td>mitochondrial genome maintenance</td>
       <td>BiologicalProcess</td>
-      <td>CC BY 4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>Gene Ontology:2021-02-01</td>
       <td>NaN</td>
-      <td>http://purl.obolibrary.org/obo/GO:0000002</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -529,27 +625,52 @@ nb_path: "00_core.ipynb"
       <td>291</td>
       <td>SLC25A4</td>
       <td>Gene</td>
-      <td>CCO 1.0</td>
-      <td>Entrez Gene:210321</td>
-      <td>123.0</td>
-      <td>http://identifiers.org/ncbigene/291</td>
-      <td>solute carrier family 25 member 4</td>
+      <td>ENSG00000151729</td>
+      <td>AAC1|ANT|ANT 1|ANT1|MTDPS12|MTDPS12A|PEO2|PEO3...</td>
+      <td>TCRD:v6.12.4;TCDA</td>
+      <td>0.0</td>
+      <td>https://genetics.opentargets.org/gene/ENSG0000...</td>
       <td>4</td>
+      <td>https://www.genecards.org/cgi-bin/carddisp.pl?...</td>
+      <td>...</td>
+      <td>False</td>
+      <td>A0A0S2Z3H3;P12235</td>
+      <td>Tbio</td>
+      <td>Entrez Gene:20220425</td>
+      <td>Mitochondrion inner membrane(uniprot);Mitochon...</td>
+      <td>MIM:103220|HGNC:HGNC:10990|Ensembl:ENSG0000015...</td>
+      <td>112.281869</td>
+      <td>https://www.dgidb.org/genes/SLC25A4</td>
+      <td>DGIdb:v4.2.0(RussLampel,HopkinsGroom)</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>55186</td>
-      <td>SLC25A36</td>
+      <td>4205</td>
+      <td>MEF2A</td>
       <td>Gene</td>
-      <td>CCO 1.0</td>
-      <td>Entrez Gene:210321</td>
-      <td>2.0</td>
-      <td>http://identifiers.org/ncbigene/55186</td>
-      <td>solute carrier family 25 member 36</td>
-      <td>3</td>
+      <td>ENSG00000068305</td>
+      <td>ADCAD1|RSRFC4|RSRFC9|mef2</td>
+      <td>TCRD:v6.12.4</td>
+      <td>0.0</td>
+      <td>https://genetics.opentargets.org/gene/ENSG0000...</td>
+      <td>15</td>
+      <td>https://www.genecards.org/cgi-bin/carddisp.pl?...</td>
+      <td>...</td>
+      <td>True</td>
+      <td>A0A0S2Z454;Q02078;A0A0S2Z4N0;A0A0S2Z4C8;A0A0S2...</td>
+      <td>Tbio</td>
+      <td>Entrez Gene:20220425</td>
+      <td>Nucleus(uniprot);Nucleoplasm(HPA_main)</td>
+      <td>MIM:600660|HGNC:HGNC:6993|Ensembl:ENSG00000068...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
+<p>4 rows × 24 columns</p>
 </div>
 </div>
 
@@ -607,22 +728,22 @@ nb_path: "00_core.ipynb"
       <th>end_name</th>
       <th>license</th>
       <th>unbiased</th>
+      <th>is_directional</th>
       <th>source</th>
-      <th>version</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>PARTICIPATES_GpBP</td>
-      <td>4358</td>
-      <td>MPV17</td>
+      <td>92667</td>
+      <td>MGME1</td>
       <td>GO:0000002</td>
       <td>mitochondrial genome maintenance</td>
       <td>CC By 4.0</td>
       <td>False</td>
-      <td>NCBI gene2go</td>
-      <td>2021-02-01</td>
+      <td>True</td>
+      <td>NCBI gene2go:2021-02-01</td>
     </tr>
     <tr>
       <th>1</th>
@@ -633,20 +754,20 @@ nb_path: "00_core.ipynb"
       <td>mitochondrial genome maintenance</td>
       <td>CC By 4.0</td>
       <td>False</td>
-      <td>NCBI gene2go</td>
-      <td>2021-02-01</td>
+      <td>True</td>
+      <td>NCBI gene2go:2021-02-01</td>
     </tr>
     <tr>
       <th>2</th>
       <td>PARTICIPATES_GpBP</td>
-      <td>55186</td>
-      <td>SLC25A36</td>
+      <td>4205</td>
+      <td>MEF2A</td>
       <td>GO:0000002</td>
       <td>mitochondrial genome maintenance</td>
       <td>CC By 4.0</td>
       <td>False</td>
-      <td>NCBI gene2go</td>
-      <td>2021-02-01</td>
+      <td>True</td>
+      <td>NCBI gene2go:2021-02-01</td>
     </tr>
   </tbody>
 </table>
