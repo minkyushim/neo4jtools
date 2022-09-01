@@ -32,7 +32,7 @@ class SimpleNeo4jHTTPAPIClient:
         self.db=db
 
     def execute_read_query(self, query, output_format=['row','graph']):
-        return execute_query(self, query, output_format)
+        return self.execute_query(self, query, output_format)
 
     def execute_query(self, query, output_format=['row','graph']):
         url=self.transaction.format(databaseName=self.db) + '/commit'

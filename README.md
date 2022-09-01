@@ -1,3 +1,4 @@
+
 # Very simple Neo4j HTTP API Client
 
 
@@ -8,7 +9,7 @@
 
 ## How to use
 
-```
+```python
 client=SimpleNeo4jHTTPAPIClient(url='http://localhost:7474', userid='neo4j', passwd='test')
 client
 ```
@@ -22,7 +23,7 @@ client
 
 ## Execute a simple query
 
-```
+```python
 client.execute_read_query('match (n) return count(n);')
 ```
 
@@ -39,7 +40,7 @@ client.execute_read_query('match (n) return count(n);')
 
 ## Execute a query and return a tabular-type result
 
-```
+```python
 import pandas as pd
 result=client.execute_read_query('match p=(n)-[r]-(m) return n.identifier, n.name, type(r), m.identifier, m.name limit 3;', output_format='row')
 pd.DataFrame(result)
@@ -106,7 +107,7 @@ pd.DataFrame(result)
 
 ## Execute a query and return a graph-type result
 
-```
+```python
 result=client.execute_read_query('match p=()--() return p limit 3;', output_format='graph')
 result
 ```
@@ -182,6 +183,6 @@ result
 
 ## Show the graph
 
-```
+```python
 client.show('match p=()--() return p limit 3;')
 ```
