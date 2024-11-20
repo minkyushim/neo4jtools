@@ -34,7 +34,7 @@ class SimpleNeo4jHTTPAPIClient:
     def execute_read_query(self, query, output_format=['row','graph']):
         return self.execute_query(query, output_format)
 
-    def execute_query(self, query, output_format=['row','graph']):
+    def execute_query(self, query, output_format=['row','graph'], name_col='name'):
         url=self.transaction.format(databaseName=self.db) + '/commit'
         headers={
             "content-type": "application/json"
@@ -55,26 +55,21 @@ class SimpleNeo4jHTTPAPIClient:
             }
           ]
         }
-        resp=requests.post(url,
-                           data=json.dumps(statement),
+        resp=requests.post(url, 
+                           data=json.dumps(statement), 
                            headers=headers)
 
         output= resp.json()
 
-        if len(output['errors']) > 0:
+        if len(output['errors']) > 0: 
             raise Exception(output['errors'])
-
-
-        output_renderer=None
+            
         if output_format=='row':
-            output_renderer=row_renderer
-
+            output=row_renderer(output)
+                    
         if output_format=='graph':
-            output_renderer=graph_renderer
-
-        if output_renderer:
-            output=output_renderer(output)
-
+            output=graph_renderer(output, name_col=name_col)
+        
         return output
 
 
