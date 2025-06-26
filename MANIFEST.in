@@ -2,4 +2,6 @@ include settings.ini
 include LICENSE
 include CONTRIBUTING.md
 include README.md
+include neo4j_cypher.sh
+include neo4j_to_graphology.sh
 recursive-exclude * __pycache__

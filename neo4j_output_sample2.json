@@ -1,0 +1,398 @@
+{
+  "results": [
+    {
+      "columns": [
+        "n",
+        "r",
+        "m"
+      ],
+      "data": [
+        {
+          "row": [
+            {
+              "license": "CC BY-SA 3.0",
+              "identifier": "CHEMBL1229517",
+              "molecule_type": "Small molecule",
+              "inchikey": "GPXBXXGIAQBQNI-UHFFFAOYSA-N",
+              "name": "VEMURAFENIB",
+              "withdrawn_flag": "0.0",
+              "is_withdrawn": "False",
+              "source": "ChEMBL:35",
+              "canonical_smiles": "CCCS(=O)(=O)Nc1ccc(F)c(C(=O)c2cnHc3ncc(-c4ccc(Cl)cc4)cc23)c1F",
+              "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1229517"
+            },
+            {
+              "license": "CC0 1.0",
+              "source": "CIViC:20230913,CIViC:20230913",
+              "url": "https://civicdb.org/links/variants/1227"
+            },
+            {
+              "symbol": "AKT3",
+              "druggability_level": "Tchem",
+              "identifier": "10000",
+              "subcellular_location": "Cytosol(HPA_main)|Nucleus(uniprot)|Golgi apparatus(HPA_additional)|Cytoplasm(uniprot)",
+              "chromosome": "1",
+              "description": "v-akt murine thymoma viral oncogene homolog 3",
+              "is_directional": "True",
+              "ensembl_id": "ENSG00000117020",
+              "pubtator_score": "111.02475",
+              "source": "Entrez Gene:hetionet,EntrezGene:20240520",
+              "type_of_gene": "protein-coding",
+              "tax_id": "9606",
+              "url": "http://identifiers.org/ncbigene/10000",
+              "license": "CC0 1.0,CCO 1.0",
+              "url3": "https://genetics.opentargets.org/gene/ENSG00000117020",
+              "url2": "https://www.genecards.org/cgi-bin/carddisp.pl?gene=AKT3",
+              "name": "AKT3",
+              "is_tf": "False"
+            }
+          ],
+          "meta": [
+            {
+              "id": 64544,
+              "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:64544",
+              "type": "node",
+              "deleted": false
+            },
+            {
+              "id": 0,
+              "elementId": "5:c5dfd9be-8d23-45a6-bf16-362933f07e2e:0",
+              "type": "relationship",
+              "deleted": false
+            },
+            {
+              "id": 1956731,
+              "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:1956731",
+              "type": "node",
+              "deleted": false
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "1956731",
+                "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:1956731",
+                "labels": [
+                  "Gene"
+                ],
+                "properties": {
+                  "symbol": "AKT3",
+                  "druggability_level": "Tchem",
+                  "identifier": "10000",
+                  "subcellular_location": "Cytosol(HPA_main)|Nucleus(uniprot)|Golgi apparatus(HPA_additional)|Cytoplasm(uniprot)",
+                  "chromosome": "1",
+                  "description": "v-akt murine thymoma viral oncogene homolog 3",
+                  "is_directional": "True",
+                  "ensembl_id": "ENSG00000117020",
+                  "pubtator_score": "111.02475",
+                  "source": "Entrez Gene:hetionet,EntrezGene:20240520",
+                  "type_of_gene": "protein-coding",
+                  "tax_id": "9606",
+                  "url": "http://identifiers.org/ncbigene/10000",
+                  "license": "CC0 1.0,CCO 1.0",
+                  "url3": "https://genetics.opentargets.org/gene/ENSG00000117020",
+                  "url2": "https://www.genecards.org/cgi-bin/carddisp.pl?gene=AKT3",
+                  "name": "AKT3",
+                  "is_tf": "False"
+                }
+              },
+              {
+                "id": "64544",
+                "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:64544",
+                "labels": [
+                  "Compound"
+                ],
+                "properties": {
+                  "license": "CC BY-SA 3.0",
+                  "identifier": "CHEMBL1229517",
+                  "molecule_type": "Small molecule",
+                  "inchikey": "GPXBXXGIAQBQNI-UHFFFAOYSA-N",
+                  "name": "VEMURAFENIB",
+                  "withdrawn_flag": "0.0",
+                  "is_withdrawn": "False",
+                  "source": "ChEMBL:35",
+                  "canonical_smiles": "CCCS(=O)(=O)Nc1ccc(F)c(C(=O)c2cnHc3ncc(-c4ccc(Cl)cc4)cc23)c1F",
+                  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1229517"
+                }
+              }
+            ],
+            "relationships": [
+              {
+                "id": "0",
+                "elementId": "5:c5dfd9be-8d23-45a6-bf16-362933f07e2e:0",
+                "type": "AFFECTS_CaG",
+                "startNode": "64544",
+                "startNodeElementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:64544",
+                "endNode": "1956731",
+                "endNodeElementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:1956731",
+                "properties": {
+                  "license": "CC0 1.0",
+                  "source": "CIViC:20230913,CIViC:20230913",
+                  "url": "https://civicdb.org/links/variants/1227"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "row": [
+            {
+              "license": "CC BY-SA 3.0",
+              "identifier": "CHEMBL189963",
+              "molecule_type": "Small molecule",
+              "inchikey": "AHJRHEGDXFFMBM-UHFFFAOYSA-N",
+              "name": "PALBOCICLIB",
+              "withdrawn_flag": "0.0",
+              "is_withdrawn": "False",
+              "source": "ChEMBL:35",
+              "canonical_smiles": "CC(=O)c1c(C)c2cnc(Nc3ccc(N4CCNCC4)cn3)nc2n(C2CCCC2)c1=O",
+              "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL189963"
+            },
+            {
+              "license": "CC0 1.0",
+              "source": "CIViC:20230913,CIViC:20230913",
+              "url": "https://civicdb.org/links/variants/556"
+            },
+            {
+              "symbol": "CDK4",
+              "druggability_level": "Tclin",
+              "identifier": "1019",
+              "subcellular_location": "Nucleoplasm(HPA_additional)|Nucleus membrane(uniprot)|Cytosol(HPA_main)|Nucleoli(HPA_additional)|Cytoplasm(uniprot)|Nuclear membrane(HPA_additional)|Nucleus(uniprot)",
+              "chromosome": "12",
+              "description": "cyclin-dependent kinase 4",
+              "is_directional": "True",
+              "ensembl_id": "ENSG00000135446",
+              "pubtator_score": "1069.615007",
+              "source": "Entrez Gene:hetionet,EntrezGene:20240520",
+              "type_of_gene": "protein-coding",
+              "tax_id": "9606",
+              "url": "http://identifiers.org/ncbigene/1019",
+              "license": "CC0 1.0,CCO 1.0",
+              "url3": "https://genetics.opentargets.org/gene/ENSG00000135446",
+              "url2": "https://www.genecards.org/cgi-bin/carddisp.pl?gene=CDK4",
+              "name": "CDK4",
+              "is_tf": "False"
+            }
+          ],
+          "meta": [
+            {
+              "id": 73826,
+              "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:73826",
+              "type": "node",
+              "deleted": false
+            },
+            {
+              "id": 1,
+              "elementId": "5:c5dfd9be-8d23-45a6-bf16-362933f07e2e:1",
+              "type": "relationship",
+              "deleted": false
+            },
+            {
+              "id": 4233058,
+              "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:4233058",
+              "type": "node",
+              "deleted": false
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "73826",
+                "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:73826",
+                "labels": [
+                  "Compound"
+                ],
+                "properties": {
+                  "license": "CC BY-SA 3.0",
+                  "identifier": "CHEMBL189963",
+                  "molecule_type": "Small molecule",
+                  "inchikey": "AHJRHEGDXFFMBM-UHFFFAOYSA-N",
+                  "name": "PALBOCICLIB",
+                  "withdrawn_flag": "0.0",
+                  "is_withdrawn": "False",
+                  "source": "ChEMBL:35",
+                  "canonical_smiles": "CC(=O)c1c(C)c2cnc(Nc3ccc(N4CCNCC4)cn3)nc2n(C2CCCC2)c1=O",
+                  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL189963"
+                }
+              },
+              {
+                "id": "4233058",
+                "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:4233058",
+                "labels": [
+                  "Gene"
+                ],
+                "properties": {
+                  "symbol": "CDK4",
+                  "druggability_level": "Tclin",
+                  "identifier": "1019",
+                  "subcellular_location": "Nucleoplasm(HPA_additional)|Nucleus membrane(uniprot)|Cytosol(HPA_main)|Nucleoli(HPA_additional)|Cytoplasm(uniprot)|Nuclear membrane(HPA_additional)|Nucleus(uniprot)",
+                  "chromosome": "12",
+                  "description": "cyclin-dependent kinase 4",
+                  "is_directional": "True",
+                  "ensembl_id": "ENSG00000135446",
+                  "pubtator_score": "1069.615007",
+                  "source": "Entrez Gene:hetionet,EntrezGene:20240520",
+                  "type_of_gene": "protein-coding",
+                  "tax_id": "9606",
+                  "url": "http://identifiers.org/ncbigene/1019",
+                  "license": "CC0 1.0,CCO 1.0",
+                  "url3": "https://genetics.opentargets.org/gene/ENSG00000135446",
+                  "url2": "https://www.genecards.org/cgi-bin/carddisp.pl?gene=CDK4",
+                  "name": "CDK4",
+                  "is_tf": "False"
+                }
+              }
+            ],
+            "relationships": [
+              {
+                "id": "1",
+                "elementId": "5:c5dfd9be-8d23-45a6-bf16-362933f07e2e:1",
+                "type": "AFFECTS_CaG",
+                "startNode": "73826",
+                "startNodeElementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:73826",
+                "endNode": "4233058",
+                "endNodeElementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:4233058",
+                "properties": {
+                  "license": "CC0 1.0",
+                  "source": "CIViC:20230913,CIViC:20230913",
+                  "url": "https://civicdb.org/links/variants/556"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "row": [
+            {
+              "license": "CC BY-SA 3.0",
+              "identifier": "CHEMBL34259",
+              "molecule_type": "Small molecule",
+              "inchikey": "FBOZXECLQNJBKD-ZDUSSCGKSA-N",
+              "name": "METHOTREXATE",
+              "withdrawn_flag": "0.0",
+              "is_withdrawn": "False",
+              "source": "ChEMBL:35",
+              "canonical_smiles": "CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(C(=O)NC@@H(CCC(=O)O)C(=O)O)cc1",
+              "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL34259"
+            },
+            {
+              "license": "CC0 1.0",
+              "source": "CIViC:20230913,CIViC:20230913",
+              "url": "https://civicdb.org/links/variants/778,https://civicdb.org/links/variants/777"
+            },
+            {
+              "symbol": "SLCO1B1",
+              "druggability_level": "Tchem",
+              "identifier": "10599",
+              "subcellular_location": "Basal cell membrane(uniprot)|Plasma membrane(HPA_main)|Basolateral cell membrane(uniprot)",
+              "chromosome": "12",
+              "description": "solute carrier organic anion transporter family,member 1B1",
+              "is_directional": "True",
+              "ensembl_id": "ENSG00000134538",
+              "pubtator_score": "531.884815",
+              "source": "EntrezGene:20240520,Entrez Gene:hetionet",
+              "type_of_gene": "protein-coding",
+              "tax_id": "9606",
+              "url": "http://identifiers.org/ncbigene/10599",
+              "license": "CCO 1.0,CC0 1.0",
+              "url3": "https://genetics.opentargets.org/gene/ENSG00000134538",
+              "url2": "https://www.genecards.org/cgi-bin/carddisp.pl?gene=SLCO1B1",
+              "name": "SLCO1B1",
+              "is_tf": "False"
+            }
+          ],
+          "meta": [
+            {
+              "id": 77667,
+              "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:77667",
+              "type": "node",
+              "deleted": false
+            },
+            {
+              "id": 2,
+              "elementId": "5:c5dfd9be-8d23-45a6-bf16-362933f07e2e:2",
+              "type": "relationship",
+              "deleted": false
+            },
+            {
+              "id": 4834255,
+              "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:4834255",
+              "type": "node",
+              "deleted": false
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "77667",
+                "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:77667",
+                "labels": [
+                  "Compound"
+                ],
+                "properties": {
+                  "license": "CC BY-SA 3.0",
+                  "identifier": "CHEMBL34259",
+                  "molecule_type": "Small molecule",
+                  "inchikey": "FBOZXECLQNJBKD-ZDUSSCGKSA-N",
+                  "name": "METHOTREXATE",
+                  "withdrawn_flag": "0.0",
+                  "is_withdrawn": "False",
+                  "source": "ChEMBL:35",
+                  "canonical_smiles": "CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(C(=O)NC@@H(CCC(=O)O)C(=O)O)cc1",
+                  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL34259"
+                }
+              },
+              {
+                "id": "4834255",
+                "elementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:4834255",
+                "labels": [
+                  "Gene"
+                ],
+                "properties": {
+                  "symbol": "SLCO1B1",
+                  "druggability_level": "Tchem",
+                  "identifier": "10599",
+                  "subcellular_location": "Basal cell membrane(uniprot)|Plasma membrane(HPA_main)|Basolateral cell membrane(uniprot)",
+                  "chromosome": "12",
+                  "description": "solute carrier organic anion transporter family,member 1B1",
+                  "is_directional": "True",
+                  "ensembl_id": "ENSG00000134538",
+                  "pubtator_score": "531.884815",
+                  "source": "EntrezGene:20240520,Entrez Gene:hetionet",
+                  "type_of_gene": "protein-coding",
+                  "tax_id": "9606",
+                  "url": "http://identifiers.org/ncbigene/10599",
+                  "license": "CCO 1.0,CC0 1.0",
+                  "url3": "https://genetics.opentargets.org/gene/ENSG00000134538",
+                  "url2": "https://www.genecards.org/cgi-bin/carddisp.pl?gene=SLCO1B1",
+                  "name": "SLCO1B1",
+                  "is_tf": "False"
+                }
+              }
+            ],
+            "relationships": [
+              {
+                "id": "2",
+                "elementId": "5:c5dfd9be-8d23-45a6-bf16-362933f07e2e:2",
+                "type": "AFFECTS_CaG",
+                "startNode": "77667",
+                "startNodeElementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:77667",
+                "endNode": "4834255",
+                "endNodeElementId": "4:c5dfd9be-8d23-45a6-bf16-362933f07e2e:4834255",
+                "properties": {
+                  "license": "CC0 1.0",
+                  "source": "CIViC:20230913,CIViC:20230913",
+                  "url": "https://civicdb.org/links/variants/778,https://civicdb.org/links/variants/777"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "lastBookmarks": [
+    "FB:kcwQxd/Zvo0jRaa/FjYpM/B+LlGQ"
+  ]
+}

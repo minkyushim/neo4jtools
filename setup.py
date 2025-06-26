@@ -60,5 +60,6 @@ setuptools.setup(
     long_description_content_type = 'text/markdown',
     zip_safe = False,
     entry_points = { 'console_scripts': cfg.get('console_scripts','').split() },
+    scripts=['neo4j_cypher.sh', 'neo4j_to_graphology.sh'],
     **setup_cfg)
 
